@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIエージェント朝刊 — 試作号 2026-11-07</title>
+<style>
+  :root{--ink:#1a1d21;--sub:#5b6470;--line:#e6e8eb;--accent:#b45309;--bg:#fbfaf8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:16px}
+  .wrap{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+  .kicker{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  h1{font-size:26px;margin:4px 0 2px;line-height:1.35}
+  .date{color:var(--sub);font-size:13px}
+  .tldr{background:var(--ink);color:#fff;border-radius:10px;padding:16px 18px;margin:20px 0}
+  .tldr h2{font-size:13px;letter-spacing:.15em;margin:0 0 8px;color:#fbbf24}
+  .tldr ol{margin:0;padding-left:20px}
+  .tldr li{margin:6px 0}
+  article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;background:#fef3c7;color:#92400e;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+  article h2{font-size:19px;margin:2px 0 8px;line-height:1.45}
+  article h3{font-size:13px;letter-spacing:.1em;color:var(--accent);margin:14px 0 4px}
+  article p{margin:6px 0}
+  .try{background:#fffbeb;border:1px dashed #d97706;border-radius:8px;padding:10px 14px;margin-top:10px}
+  .try p{margin:2px 0}
+  .meta{font-size:12.5px;color:var(--sub);margin-top:10px}
+  a{color:#1d4ed8}
+  .notes{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .notes h2{font-size:17px;margin:0 0 8px}
+  .notes li{margin:10px 0}
+  .stock li{margin:6px 0}
+  footer{color:var(--sub);font-size:12.5px;border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+  code{background:#f1f3f5;border-radius:4px;padding:0 5px;font-size:.9em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI AGENT MORNING — PROTOTYPE</div>
+  <h1>AIエージェント朝刊・試作号</h1>
+  <div class="date">2026年11月7日（土）｜直近約1週間の公開情報から、やり方・設定・数字などの具体的な中身があるものだけを選んだ</div>
+</header>
+
+<section class="tldr">
+  <h2>今日のポイント — この3つだけ読めば号全体の地図がつかめる</h2>
+  <ol>
+    <li><b>Claude Codeは「1つの長い会話で全部やらせない」のが公式チームのやり方。</b>作業場所を分けて3〜5個を同時に走らせ、調べ物は別の担当に任せて結論だけ受け取る。会話が長くなって、前に言った指示を忘れたり混乱したりするのを防ぐため。</li>
+    <li><b>Codexに仕事を分担させたいなら、毎回口で頼むんじゃなく、最初に説明ファイルへ書いておく。</b>プロジェクトの説明ファイル（AGENTS.md）に「確認作業のときは見方を分けて3人で見て」と書いておけば、次からは頼まなくてもその通りに分担するようになる。</li>
+    <li><b>AIが書く速さより、人間がチェックする速さの方が追いつかなくなってきた。</b>AIをよく使う人では、確認が終わって本番に取り込めた変更の数が前年比で約2倍に増えた一方、チェック待ちの時間は5倍以上に膨らんだという大規模調査（270万件の変更データを分析）。だから「速く書かせる」より先に「何をもって完成とするか」を決めて渡す方が大事になってきている。</li>
+  </ol>
+  <p style="font-size:12.5px;color:#d6d3cd;margin:10px 0 0">書き方のルール：専門用語は最初に出たところで普通の言葉で言い直す。読んだだけで場面と意味が浮かぶ文で書く。</p>
+</section>
+
+<article>
+  <span class="tag">特集 1 ・ CLAUDE CODE</span>
+  <h2>Claude Codeの公式チームは、作業を3〜5個に分けて同時に進めている</h2>
+  <h3>誰が・何をした</h3>
+  <p>Claude Codeを作っているAnthropic自身のチームが、公式ヘルプに「自分たちが毎日やっている使い方」をまとめた（最近更新されたページ）。一番効くと書かれているのが、<b>作業を分けて同時に進めるやり方</b>だ。</p>
+  <p>具体的にはこういうこと：1つの会話の中で全部をやらせ続けると、会話が長くなってAIが混乱しやすい。そこで、プロジェクトのコピーを別フォルダにいくつか作り（この仕組みを worktree と呼ぶ）、コピーごとに別の作業を同時に進める。同時に進める数は3〜5個くらいが目安だそうだ。</p>
+  <p>もう1つ、調べ物専用の「手伝い役AI」を使うやり方もある（この手伝い役を subagent と呼ぶ）。手伝い役にコード全体を調べさせて、メインのAIには「結論だけ」を返させる。手伝い役にも作業コピーを分けると、大きな変更をまとめて頼んでも、作業同士がぶつからない。</p>
+  <h3>なぜ効くか</h3>
+  <p>狙いは「速さ」よりも「ごちゃごちゃにしないこと」。調べ物の途中の大量のメモやファイルの中身がメインの会話に入り込むと、会話が重くなって、大事な指示が埋もれてしまう。調べ物は手伝い役の中だけで完結させて、メインには結論だけを持ち帰る、という分け方だ。</p>
+  <p>もう1つ面白い運用：Claudeが間違えたら、その場で説明メモファイル（CLAUDE.md＝AIが作業の最初に必ず読む、プロジェクトの注意書きファイル）に「これはやらないで」と書き足す。すると次回から同じ間違いをしなくなる。間違いを、その場の注意で終わらせず、ファイルへの書き足しに変えている。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>次の作業で、調べ物だけを手伝い役AIに任せて、「結論と、その根拠になったファイルの名前だけを返して」と頼んでみる。メインの会話にファイルの中身がずらっと入ってこない感覚を、1回体験するのが目的。</p>
+  </div>
+  <p class="meta">出典：Claude Code power user tips（Anthropic公式）／どれくらい確かか：高い。作っているチーム自身の運用だから<br>
+  <a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips">support.claude.com/en/articles/14554000-claude-code-power-user-tips</a></p>
+</article>
+
+<article>
+  <span class="tag">特集 2 ・ CODEX</span>
+  <h2>Codexは「分担して」と説明ファイルに書いておかないと、分担してくれない</h2>
+  <h3>誰が・何をした</h3>
+  <p>OpenAIとAnthropic、両方の公式説明を突き合わせて比べた記事（5日前に更新され、10月26日時点の公式の説明で中身を確認している）。CodexとClaude Codeで、手伝い役AIの「呼ばれ方」が違う、という話だ。</p>
+  <p>Codexの場合、手伝い役が動き出すのは2つのときだけ。1つは、使う人がその場で「分担してやって」と頼んだとき。もう1つは、プロジェクトの説明ファイル（AGENTS.md）や、決まった作業手順をまとめたファイル（Skill）に、「こういうときは分担して」とあらかじめ書いてあるとき。一方Claude Codeは、頼まれた内容を見て、AI自身の判断で手伝い役を呼ぶこともある。</p>
+  <h3>なぜ効くか</h3>
+  <p>つまりCodexで分担を上手く使うコツは、その場の頼み方の工夫じゃなくて、<b>先に説明ファイルへ書いておくこと</b>だ。「毎回頼む」をやめて、「どういうときに、どう分けるか」をファイルに決めておく。</p>
+  <p>注意点も公式の説明にはっきり書いてある：手伝い役を使うと、1人でやるよりAIの利用量（トークン＝AIが読み書きする文字の量）を多く使う。だから最初は、コードを書き換える作業ではなく、調べ物や確認のような「読むだけの作業」から分担させるのが安全だ。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>変更の確認作業を、見方を分けて3人の手伝い役に同時にやらせてみる。頼み方はこういう形：「この変更を、（1）安全上の問題がないか、（2）テストが足りているか、（3）後から直しやすい作りか、の3つに分けて同時に確認して。全員が終わるのを待って、3つの見方ごとに、関係するファイルの名前と一緒にまとめて」。分け方と、終わった後のまとめ方まで、先に言っておくのがポイント。</p>
+  </div>
+  <p class="meta">出典：Codex and Claude Code Subagents: How to Run Them in Parallel（両社の公式説明と突き合わせた記事）／どれくらい確かか：中〜高。人づての記事だが、公式の説明で確認している<br>
+  <a href="https://arte.itlibra.com/en/articles/codex-claude-code-parallel-subagents">arte.itlibra.com/en/articles/codex-claude-code-parallel-subagents</a></p>
+</article>
+
+<article>
+  <span class="tag">特集 3 ・ 数字で見る変化</span>
+  <h2>AIが書く量は増えたのに、確認待ちで止まる時間が5倍になった</h2>
+  <h3>誰が・何をした</h3>
+  <p>開発チームの生産性を測る会社LinearBが、11月2日に発表した大きな調査。270万件の変更データ、8万3千人の開発者、253の会社を、2026年2月から5月にかけて調べたものだ。ここで言う「変更」とは、コードを直して「本番に入れていいか確認してほしい」と出すひとまとまりの作業のこと（この確認依頼をPR、確認が終わって本番に取り込むことをマージと呼ぶ）。</p>
+  <p>結果は2つ。AIをよく使う人（コーディングする日の75%以上でAIを使う人）は、本番に取り込めた変更の数が前年より約2倍（+96%）に増えた。ところが、AIが作った変更は1件の大きさが大きくなりがちで（大きい方から4分の1に入るものでは2.6倍）、確認してもらうまでの待ち時間は5倍以上になった。</p>
+  <h3>何が言えるか</h3>
+  <p>「書くのが速くなった」分だけ、「人間が確認する場所」で列ができている、というのがこの数字の読み方だ。だから次に工夫する場所は、書かせ方よりも確認の仕方になる。たとえば、変更を小さく区切って出す、確認の見方を先に分けておく、「何ができたら完成か」を頼む時点で書いておく、といった工夫だ。</p>
+  <p>ただし注意：これはLinearBという会社の自社調査で、測ったのはその会社の道具を使っている開発チーム。すべての会社にそのまま当てはまるとは言えない。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>次にAIへ作業を頼むとき、頼み文の最後に2つ書き足してみる。「何ができたら完成か」と「終わったら何を見せてほしいか（テストの結果、どこをどう変えたかのまとめ）」。確認の基準を、終わってからではなく頼む時点で渡す実験だ。</p>
+  </div>
+  <p class="meta">出典：LinearBの2026年調査を紹介した解説記事（11月、4日前）／どれくらい確かか：中。発表したのは調査した会社自身だが、調べた件数は大きい<br>
+  <a href="https://abdulwahabdev.medium.com/ai-coding-agents-are-writing-more-code-so-why-are-pull-requests-taking-longer-to-merge-a3e4f09b40b7">Medium — AI Coding Agents Are Writing More Code. So Why Are Pull Requests Taking Longer to Merge?</a></p>
+</article>
+
+<section class="notes">
+  <h2>小ネタ速報</h2>
+  <ul>
+    <li><b>説明メモファイルは短く保つ。</b>AIが最初に読む説明メモ（CLAUDE.md）は、作業のたびに毎回読み込まれるので、長く書くほど毎回の負担になる。目安は200行より短く、とAnthropicは言っている。OpenAI側の言い方も同じで、「短くて正確な説明ファイルは、長くて曖昧な決まり集より役に立つ」。あわせて、会話は「1つの会話に1つの作業」までにして、直しを2回頼んでダメなら、新しい会話で言い方を変えて最初から頼み直す方が結果的に安上がり、という実践記事も出ている。<br><a href="https://dev.to/papansarkar101/use-ai-coding-agents-like-a-pro-fewer-tokens-better-code-4j36">dev.to — Use AI Coding Agents Like a Pro</a>（6日前）</li>
+    <li><b>説明メモは1つのファイルにまとめる。</b>Claude Code用の説明メモ（CLAUDE.md）と、Codexなど他ツール用の説明メモ（AGENTS.md）を別々に書くと、直し忘れが出る。そこで、中身はAGENTS.mdに寄せて、CLAUDE.mdには「AGENTS.mdを読んで」という1行だけを書くやり方がある。どのツールを使っても、同じ注意書きを読ませられる。<br><a href="https://www.closefuture.io/blogs/codex-claude-code-tricks-solo-developers">closefuture.io — 7 Codex &amp; Claude Code Tricks for Solo Developers</a></li>
+    <li><b>大きな組織のAIチームは、作業を4つの段階に分けている。</b>約900人のエンジニアがいる会社InfobipのAIチームが、学会（CIKM'26）で発表したやり方。段階は、調べる→計画を立てる→やることを決める→作る、の4つ。AIに渡す情報の手入れは、「大事なことは会話の外のファイルに書いて残す」「必要な情報だけを選んで渡す」「長くなったら要約して短くする」「作業ごとに会話を分ける」の4つだそうだ。<br><a href="https://arxiv.org/pdf/2608.30701v1">arXiv — A Phased Workflow for Operating LLM-Based Coding Agents</a></li>
+    <li><b>v0（画面やアプリを作るAI）は、最初は小さく頼んで、「できた」と言える条件まで書く。</b>たとえば問い合わせフォームなら、「送信できたら成功の表示を出す」「メールアドレスが間違っていたら受け付けない」「間違えたときに、名前の入力は消さずに残す」まで書く。作ったものは、いきなり本番に入れず、作業用のコピーで確認してから取り込む流れになっている。<br><a href="https://www.anygen.io/showcase/v0-by-vercel/index.html">AnyGen — v0 by Vercel: Build Apps with AI</a></li>
+    <li><b>Codexの手伝い役は、自分専用のものを追加できる。</b>決まった置き場所（.codex/agents/ というフォルダ）に設定ファイルを置くと、その役割の手伝い役になる。ただし大事な注意：ファイルの読み書きの許可の範囲は、元の会話の設定を引き継ぐので、手伝い役の設定ファイル側で「読み取りだけ」に絞ることはできない。分担させる前に、元の会話の許可の範囲を決めておくのが先。<br><a href="https://www.lilachbullock.com/codex-subagents/">lilachbullock.com — Codex Subagents (2026)</a>（7日前）</li>
+  </ul>
+</section>
+
+<section class="notes stock">
+  <h2>試したいストック（今日分）</h2>
+  <ul>
+    <li>調べ物を手伝い役AIに任せて、「結論と根拠のファイル名だけ」返させる（特集1）</li>
+    <li>Codexで、見方を分けた3人の確認作業を1回やってみる（特集2）</li>
+    <li>頼み文に「何ができたら完成か」と「終わったら見せるもの」を先に書く（特集3）</li>
+  </ul>
+</section>
+
+<footer>
+  試作号について：Xの投稿そのものは探す経路が弱く、直接は拾い切れていない。そのため今回は、Xで話題になる実践の「元の情報源」から作った。毎朝版では、注目している人たちの発信を見つけて、元の情報で確認する、という2段構えで回す想定。選ぶ基準：やり方・設定・数字・再現の手順のどれかという、具体的な中身があるものだけ。
+</footer>
+
+</div>
+</body>
+</html>
