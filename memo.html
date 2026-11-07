@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>超感ラボ — AI・心理学・マーケティング</title>
+<style>
+  :root{--ink:#1a1d21;--sub:#5b6470;--line:#e6e8eb;--accent:#b45309;--bg:#fbfaf8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:clamp(16px,15.5px + 0.21vw,17px);letter-spacing:0.02em}
+  .wrap{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:16px}
+  .kicker{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  h1{font-size:26px;margin:4px 0 2px;line-height:1.35}
+  .date{color:var(--sub);font-size:13px}
+  nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 6px}
+  nav a{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;font-size:14px;text-decoration:none;color:var(--ink)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .card h2{font-size:18px;margin:0 0 6px;line-height:1.45}
+  .card p{margin:4px 0}
+  a{color:#1d4ed8}
+  .meta{font-size:12.5px;color:var(--sub)}
+  .tag{display:inline-block;font-size:11.5px;font-weight:700;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:0 9px;margin-bottom:6px}
+  .tag.small{border-color:var(--line);color:var(--sub)}
+  footer{color:var(--sub);font-size:12.5px;border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+
+/* news-theme (2026-11-07) */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:#14161a;display:flex;flex-direction:column;align-items:stretch;padding:0;border-bottom:3px solid #b45309}
+.topbar .brand{color:#fff;font-weight:700;font-size:17px;letter-spacing:.08em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;height:52px;padding:0 14px}
+.topbar .brand span{color:#fbbf24}
+.topbar nav{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;white-space:nowrap;margin:0;padding:8px 12px;background:#fbfaf8;scrollbar-width:none}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{border:1px solid #e6e8eb;background:#fff;border-radius:999px;padding:4px 14px;font-size:14px;line-height:1.5;text-decoration:none;color:#1a1d21}
+body{padding-top:102px}
+h1{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;font-size:29px}
+article h2,.card h2,.notes h2{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif}
+article{border-radius:4px}
+article h2{font-size:21px}
+.card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
+.appbar{display:none}
+.topbar .brandrow{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 8px 0 14px}
+.topbar .brand{height:auto;padding:0}
+.menubtn{background:transparent;border:1px solid #3a3f46;color:#fff;border-radius:6px;font-size:14px;padding:6px 14px;cursor:pointer;font-family:inherit}
+.dropdown{position:fixed;top:108px;right:10px;z-index:70;background:#fff;border:1px solid #e6e8eb;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.20);padding:6px;min-width:190px;display:none}
+.dropdown.open{display:block}
+.dropdown button,.dropdown a{display:block;width:100%;text-align:left;background:none;border:none;padding:11px 12px;font-size:15px;color:#1a1d21;text-decoration:none;cursor:pointer;font-family:inherit;box-sizing:border-box}
+.issue-list{margin:10px 0 2px;padding-left:20px}
+.issue-list li{margin:7px 0}
+article[id],section[id]{scroll-margin-top:112px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#263026">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="超感ラボ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+<div class="topbar"><div class="brandrow"><a class="brand" href="index.html">超感<span>ラボ</span></a><button class="menubtn" type="button">メニュー</button></div><nav><a href="index.html">ホーム</a><a href="category/ai.html">AI</a><a href="category/psychology.html">心理学</a><a href="category/marketing.html">マーケティング</a><a href="archive.html">アーカイブ</a><a href="stock.html">ストック</a><a href="memo.html">メモ</a></nav></div>
+<div class="dropdown"><button id="menu-reload" type="button">↻ 更新する（最新を読み直す）</button><a href="index.html">ホーム（タイムライン）</a><a href="archive.html">アーカイブ</a><a href="memo.html">メモを開く</a></div>
+
+<div class="wrap">
+<header>
+  <div class="kicker">MEMO</div>
+  <h1>メモを書く</h1>
+  <div class="date">書いたメモはClaudeが読み、スプレッドシートに転記します。「疑問・深掘り」は毎朝の号で1日1件まで記事になります。</div>
+</header>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlFMsb8J9oZ02SsethXEX_d5NrELEE4q6nRugR0iOs3wfGbA/viewform?embedded=true" style="width:100%;height:980px;border:1px solid var(--line);border-radius:8px;background:#fff" loading="lazy" title="超感ラボ メモ入力フォーム">読み込んでいます…</iframe>
+<p class="meta" style="margin-top:14px">過去のメモとClaudeからの返しは <a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモ用スプレッドシート</a> で見られます。フォームが表示されない場合は <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlFMsb8J9oZ02SsethXEX_d5NrELEE4q6nRugR0iOs3wfGbA/viewform">フォームを直接開く</a>。</p>
+<p class="backlink"><a href="index.html">← タイムライン（ホーム）に戻る</a></p>
+</div>
+<footer>運営：ゆや専用の超感ラボ（Museが毎朝作成）。出典は各記事内に明記。</footer>
+</div>
+<!-- auto-reload -->
+<script>
+(function(){var t=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){if(Date.now()-t>5*60*1000){location.reload();}t=Date.now();}});window.addEventListener('pageshow',function(e){if(e.persisted){location.reload();}});})();
+</script>
+<!-- menu-script -->
+<script>
+(function(){var b=document.querySelector('.menubtn'),d=document.querySelector('.dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});document.addEventListener('click',function(){d.classList.remove('open');});var r=document.getElementById('menu-reload');if(r){r.addEventListener('click',function(){var u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());});}})();
+</script>
+</body>
+</html>
