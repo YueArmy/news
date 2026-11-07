@@ -51,6 +51,15 @@ article{border-radius:4px}
 article h2{font-size:21px}
 .card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
 .appbar{display:none}
+.topbar .brandrow{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 8px 0 14px}
+.topbar .brand{height:auto;padding:0}
+.menubtn{background:transparent;border:1px solid #3a3f46;color:#fff;border-radius:6px;font-size:14px;padding:6px 14px;cursor:pointer;font-family:inherit}
+.dropdown{position:fixed;top:108px;right:10px;z-index:70;background:#fff;border:1px solid #e6e8eb;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.20);padding:6px;min-width:190px;display:none}
+.dropdown.open{display:block}
+.dropdown button,.dropdown a{display:block;width:100%;text-align:left;background:none;border:none;padding:11px 12px;font-size:15px;color:#1a1d21;text-decoration:none;cursor:pointer;font-family:inherit;box-sizing:border-box}
+.issue-list{margin:10px 0 2px;padding-left:20px}
+.issue-list li{margin:7px 0}
+article[id],section[id]{scroll-margin-top:112px}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -61,7 +70,8 @@ article h2{font-size:21px}
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 </head>
 <body>
-<div class="topbar"><a class="brand" href="../index.html">超感<span>ラボ</span></a><nav><a href="../index.html">ホーム</a><a href="../category/ai.html">AI</a><a href="../category/psychology.html">心理学</a><a href="../category/marketing.html">マーケティング</a><a href="../archive.html">アーカイブ</a><a href="../stock.html">ストック</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモ</a></nav></div>
+<div class="topbar"><div class="brandrow"><a class="brand" href="../index.html">超感<span>ラボ</span></a><button class="menubtn" type="button">メニュー</button></div><nav><a href="../index.html">ホーム</a><a href="../category/ai.html">AI</a><a href="../category/psychology.html">心理学</a><a href="../category/marketing.html">マーケティング</a><a href="../archive.html">アーカイブ</a><a href="../stock.html">ストック</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモ</a></nav></div>
+<div class="dropdown"><button id="menu-reload" type="button">↻ 更新する（最新を読み直す）</button><a href="../index.html">ホーム（タイムライン）</a><a href="../archive.html">アーカイブ</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモを開く</a></div>
 <div class="wrap">
 
 <header>
@@ -80,7 +90,7 @@ article h2{font-size:21px}
   <p style="font-size:12.5px;color:#d6d3cd;margin:10px 0 0">書き方のルール：専門用語は最初に出たところで普通の言葉で言い直す。読んだだけで場面と意味が浮かぶ文で書く。</p>
 </section>
 
-<article>
+<article id="f1">
   <span class="tag">特集 1 ・ CLAUDE CODE</span>
   <h2>Claude Codeの公式チームは、作業を3〜5個に分けて同時に進めている</h2>
   <h3>誰が・何をした</h3>
@@ -145,7 +155,7 @@ article h2{font-size:21px}
   <a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips">support.claude.com/en/articles/14554000-claude-code-power-user-tips</a></p>
 </article>
 
-<article>
+<article id="f2">
   <span class="tag">特集 2 ・ CODEX</span>
   <h2>Codexは「分担して」と説明ファイルに書いておかないと、分担してくれない</h2>
   <h3>誰が・何をした</h3>
@@ -162,7 +172,7 @@ article h2{font-size:21px}
   <a href="https://arte.itlibra.com/en/articles/codex-claude-code-parallel-subagents">arte.itlibra.com/en/articles/codex-claude-code-parallel-subagents</a></p>
 </article>
 
-<article>
+<article id="f3">
   <span class="tag">特集 3 ・ 数字で見る変化</span>
   <h2>AIが書く量は増えたのに、確認待ちで止まる時間が5倍になった</h2>
   <h3>誰が・何をした</h3>
@@ -179,7 +189,7 @@ article h2{font-size:21px}
   <a href="https://abdulwahabdev.medium.com/ai-coding-agents-are-writing-more-code-so-why-are-pull-requests-taking-longer-to-merge-a3e4f09b40b7">Medium — AI Coding Agents Are Writing More Code. So Why Are Pull Requests Taking Longer to Merge?</a></p>
 </article>
 
-<section class="notes">
+<section class="notes" id="notes">
   <h2>小ネタ速報</h2>
   <ul>
     <li><b>説明メモファイルは短く保つ。</b>AIが最初に読む説明メモ（CLAUDE.md）は、作業のたびに毎回読み込まれるので、長く書くほど毎回の負担になる。目安は200行より短く、とAnthropicは言っている。OpenAI側の言い方も同じで、「短くて正確な説明ファイルは、長くて曖昧な決まり集より役に立つ」。あわせて、会話は「1つの会話に1つの作業」までにして、直しを2回頼んでダメなら、新しい会話で言い方を変えて最初から頼み直す方が結果的に安上がり、という実践記事も出ている。<br><a href="https://dev.to/papansarkar101/use-ai-coding-agents-like-a-pro-fewer-tokens-better-code-4j36">dev.to — Use AI Coding Agents Like a Pro</a>（6日前）</li>
@@ -208,6 +218,10 @@ article h2{font-size:21px}
 <!-- auto-reload -->
 <script>
 (function(){var t=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){if(Date.now()-t>5*60*1000){location.reload();}t=Date.now();}});window.addEventListener('pageshow',function(e){if(e.persisted){location.reload();}});})();
+</script>
+<!-- menu-script -->
+<script>
+(function(){var b=document.querySelector('.menubtn'),d=document.querySelector('.dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});document.addEventListener('click',function(){d.classList.remove('open');});var r=document.getElementById('menu-reload');if(r){r.addEventListener('click',function(){var u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());});}})();
 </script>
 </body>
 </html>

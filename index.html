@@ -38,6 +38,15 @@ article{border-radius:4px}
 article h2{font-size:21px}
 .card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
 .appbar{display:none}
+.topbar .brandrow{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 8px 0 14px}
+.topbar .brand{height:auto;padding:0}
+.menubtn{background:transparent;border:1px solid #3a3f46;color:#fff;border-radius:6px;font-size:14px;padding:6px 14px;cursor:pointer;font-family:inherit}
+.dropdown{position:fixed;top:108px;right:10px;z-index:70;background:#fff;border:1px solid #e6e8eb;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.20);padding:6px;min-width:190px;display:none}
+.dropdown.open{display:block}
+.dropdown button,.dropdown a{display:block;width:100%;text-align:left;background:none;border:none;padding:11px 12px;font-size:15px;color:#1a1d21;text-decoration:none;cursor:pointer;font-family:inherit;box-sizing:border-box}
+.issue-list{margin:10px 0 2px;padding-left:20px}
+.issue-list li{margin:7px 0}
+article[id],section[id]{scroll-margin-top:112px}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="manifest" href="manifest.json">
@@ -47,7 +56,8 @@ article h2{font-size:21px}
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
-<div class="topbar"><a class="brand" href="index.html">超感<span>ラボ</span></a><nav><a href="index.html">ホーム</a><a href="category/ai.html">AI</a><a href="category/psychology.html">心理学</a><a href="category/marketing.html">マーケティング</a><a href="archive.html">アーカイブ</a><a href="stock.html">ストック</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモ</a></nav></div>
+<div class="topbar"><div class="brandrow"><a class="brand" href="index.html">超感<span>ラボ</span></a><button class="menubtn" type="button">メニュー</button></div><nav><a href="index.html">ホーム</a><a href="category/ai.html">AI</a><a href="category/psychology.html">心理学</a><a href="category/marketing.html">マーケティング</a><a href="archive.html">アーカイブ</a><a href="stock.html">ストック</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモ</a></nav></div>
+<div class="dropdown"><button id="menu-reload" type="button">↻ 更新する（最新を読み直す）</button><a href="index.html">ホーム（タイムライン）</a><a href="archive.html">アーカイブ</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモを開く</a></div>
 <div class="wrap">
 <header>
   <div class="kicker">MORNING BRIEF</div>
@@ -56,62 +66,16 @@ article h2{font-size:21px}
   
 </header>
 
-<section class="card">
-  <span class="tag">特集</span>
-  <h2><a href="issues/2026-11-07.html">全部やらせるな。分けた方が、速くて混乱しない</a></h2>
+<section class="card issue-card">
+  <div class="meta">2026年11月7日（土）｜試作号</div>
+  <h2><a href="issues/2026-11-07.html#f1">全部やらせるな。分けた方が、速くて混乱しない</a></h2>
   <p>Claude Codeの公式チームは、作業ごとに担当を分けて、それぞれにプロジェクトのコピーを持たせ、同じ時刻に進めている。1つの長い会話で全部をやらせるより、待ち時間も混乱も減る。</p>
-  <p class="meta">2026年11月7日 ・ AI ・ 試作号の特集1</p>
+  <ul class="issue-list">
+    <li><a href="issues/2026-11-07.html#f2">分担は「頼み方」じゃなく「先に書いたメモ」で決まる</a></li>
+    <li><a href="issues/2026-11-07.html#f3">作るのが速くなったら、渋滞は「チェック待ち」に移った</a></li>
+    <li><a href="issues/2026-11-07.html#notes">小ネタ5本（メモの書き方、900人のAIチームの分け方、画面づくりの頼み方 ほか）</a></li>
+  </ul>
 </section>
-
-<section class="card">
-  <span class="tag">特集</span>
-  <h2><a href="issues/2026-11-07.html">分担は「頼み方」じゃなく「先に書いたメモ」で決まる</a></h2>
-  <p>Codexの手伝い役への分担は、その場の頼み方では安定しない。説明ファイル（AGENTS.md）に「こういう作業は手伝い役に渡す」と先に書いてあるときだけ、毎回ちゃんと発動する。</p>
-  <p class="meta">2026年11月7日 ・ AI ・ 試作号の特集2</p>
-</section>
-
-<section class="card">
-  <span class="tag">特集</span>
-  <h2><a href="issues/2026-11-07.html">作るのが速くなったら、渋滞は「チェック待ち」に移った</a></h2>
-  <p>270万件の開発記録を調べた調査では、AIが書く速さは上がったのに、人がチェックする行列が新しい詰まりどころになっていた。速くすべき場所が、作る側から確かめる側へ移っている。</p>
-  <p class="meta">2026年11月7日 ・ AI ・ 試作号の特集3</p>
-</section>
-
-<section class="card">
-  <span class="tag small">小ネタ速報</span>
-  <h2><a href="issues/2026-11-07.html">AIへの説明メモは、短いほど効く</a></h2>
-  <p>AIが毎回読む説明メモは、長く書くほど毎回の負担になる。目安は200行より短く。気に入ったら、スプレッドシートの「小ネタ選択」タブで○を付けると記事になる。</p>
-  <p class="meta">2026年11月7日 ・ AI</p>
-</section>
-
-<section class="card">
-  <span class="tag small">小ネタ速報</span>
-  <h2><a href="issues/2026-11-07.html">説明メモは2つ書くな。1つに寄せろ</a></h2>
-  <p>ツールごとに説明メモを分けると、直し忘れが出る。中身は1つのファイルに寄せて、もう一方には「そっちを読んで」と1行だけ書くやり方がある。</p>
-  <p class="meta">2026年11月7日 ・ AI</p>
-</section>
-
-<section class="card">
-  <span class="tag small">小ネタ速報</span>
-  <h2><a href="issues/2026-11-07.html">900人の会社のAIチームは、作業を4段階に分けていた</a></h2>
-  <p>調べる→計画を立てる→やることを決める→作る。大事な情報は会話の外のファイルに残し、会話は作業ごとに分けるのが共通の型だった。</p>
-  <p class="meta">2026年11月7日 ・ AI</p>
-</section>
-
-<section class="card">
-  <span class="tag small">小ネタ速報</span>
-  <h2><a href="issues/2026-11-07.html">画面づくりは「小さく頼んで、合格条件まで書く」</a></h2>
-  <p>画面を作るAI（v0）は、最初は小さく頼み、「何ができたら合格か」まで書くと外しにくい。いきなり本番に入れず、コピーで確かめてから取り込む。</p>
-  <p class="meta">2026年11月7日 ・ AI</p>
-</section>
-
-<section class="card">
-  <span class="tag small">小ネタ速報</span>
-  <h2><a href="issues/2026-11-07.html">Codexの手伝い役は自作できる。でも権限は親ゆずり</a></h2>
-  <p>決まったフォルダに設定ファイルを置くと、自分専用の手伝い役が作れる。ただし読み書きの許可は元の会話の設定を引き継ぐので、先に親側の範囲を決めておく。</p>
-  <p class="meta">2026年11月7日 ・ AI</p>
-</section>
-
 <section class="card">
   <h2>参加のしかた（君の入力がネタになる）</h2>
   <p>・<strong>疑問・深掘り</strong>：気になることや深掘りしたいテーマは、スプレッドシートの「疑問・深掘り」タブに書いておく。Museが毎朝読みに来て、記事にしてリンクを書き戻す。</p>
@@ -129,6 +93,10 @@ article h2{font-size:21px}
 <!-- auto-reload -->
 <script>
 (function(){var t=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){if(Date.now()-t>5*60*1000){location.reload();}t=Date.now();}});window.addEventListener('pageshow',function(e){if(e.persisted){location.reload();}});})();
+</script>
+<!-- menu-script -->
+<script>
+(function(){var b=document.querySelector('.menubtn'),d=document.querySelector('.dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});document.addEventListener('click',function(){d.classList.remove('open');});var r=document.getElementById('menu-reload');if(r){r.addEventListener('click',function(){var u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());});}})();
 </script>
 </body>
 </html>

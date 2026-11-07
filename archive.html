@@ -16,6 +16,15 @@ article{border-radius:4px}
 article h2{font-size:21px}
 .card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
 .appbar{display:none}
+.topbar .brandrow{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 8px 0 14px}
+.topbar .brand{height:auto;padding:0}
+.menubtn{background:transparent;border:1px solid #3a3f46;color:#fff;border-radius:6px;font-size:14px;padding:6px 14px;cursor:pointer;font-family:inherit}
+.dropdown{position:fixed;top:108px;right:10px;z-index:70;background:#fff;border:1px solid #e6e8eb;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.20);padding:6px;min-width:190px;display:none}
+.dropdown.open{display:block}
+.dropdown button,.dropdown a{display:block;width:100%;text-align:left;background:none;border:none;padding:11px 12px;font-size:15px;color:#1a1d21;text-decoration:none;cursor:pointer;font-family:inherit;box-sizing:border-box}
+.issue-list{margin:10px 0 2px;padding-left:20px}
+.issue-list li{margin:7px 0}
+article[id],section[id]{scroll-margin-top:112px}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="manifest" href="manifest.json">
@@ -24,7 +33,8 @@ article h2{font-size:21px}
 <meta name="apple-mobile-web-app-title" content="超感ラボ">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head><body>
-<div class="topbar"><a class="brand" href="index.html">超感<span>ラボ</span></a><nav><a href="index.html">ホーム</a><a href="category/ai.html">AI</a><a href="category/psychology.html">心理学</a><a href="category/marketing.html">マーケティング</a><a href="archive.html">アーカイブ</a><a href="stock.html">ストック</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモ</a></nav></div>
+<div class="topbar"><div class="brandrow"><a class="brand" href="index.html">超感<span>ラボ</span></a><button class="menubtn" type="button">メニュー</button></div><nav><a href="index.html">ホーム</a><a href="category/ai.html">AI</a><a href="category/psychology.html">心理学</a><a href="category/marketing.html">マーケティング</a><a href="archive.html">アーカイブ</a><a href="stock.html">ストック</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモ</a></nav></div>
+<div class="dropdown"><button id="menu-reload" type="button">↻ 更新する（最新を読み直す）</button><a href="index.html">ホーム（タイムライン）</a><a href="archive.html">アーカイブ</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモを開く</a></div>
 <div class="wrap">
 <p><a href="index.html">← 今日の号へ</a></p>
 <h1>アーカイブ</h1>
@@ -35,5 +45,9 @@ article h2{font-size:21px}
 <!-- auto-reload -->
 <script>
 (function(){var t=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){if(Date.now()-t>5*60*1000){location.reload();}t=Date.now();}});window.addEventListener('pageshow',function(e){if(e.persisted){location.reload();}});})();
+</script>
+<!-- menu-script -->
+<script>
+(function(){var b=document.querySelector('.menubtn'),d=document.querySelector('.dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});document.addEventListener('click',function(){d.classList.remove('open');});var r=document.getElementById('menu-reload');if(r){r.addEventListener('click',function(){var u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());});}})();
 </script>
 </body></html>
