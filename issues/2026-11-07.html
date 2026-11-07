@@ -60,6 +60,47 @@
   <p>Claude Codeを作っているAnthropic自身のチームが、公式ヘルプに「自分たちが毎日やっている使い方」をまとめた（最近更新されたページ）。一番効くと書かれているのが、<b>作業を分けて同時に進めるやり方</b>だ。</p>
   <p>具体的には、こんな絵だ。たとえばアプリの改修をするとして、やることを3つに分ける。1つ目はログイン画面を作ること、2つ目はデータの保存の仕組みを直すこと、3つ目は今ある不具合の原因を調べること。この3つを、1つの会話の中で順番に1つずつやらせるのではなく、<b>同じ時刻に、それぞれ別の担当で進める</b>。人が3人で別々の机に分かれて分担するのと、絵としては同じだ。同時に進める数は3〜5個くらいが目安だそうだ。</p>
   <p>そのための仕掛けも書いておく：3つの担当が同じファイルを同時に書き換えると、互いに上書きし合って壊れる。だから、プロジェクトのコピーを担当ごとに別フォルダへ用意して、それぞれ自分のコピーの中で作業させる（この仕組みを worktree と呼ぶ）。</p>
+  <figure style="margin:14px 0"><svg viewBox="0 0 640 486" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="作業を分けて同時に進めるやり方の図" style="width:100%;height:auto;font-family:-apple-system,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif">
+  <text x="0" y="20" font-size="16" font-weight="700" fill="#1a1d21">1つの会話で全部やる場合</text>
+  <rect x="170" y="32" width="300" height="42" rx="8" fill="#f1f3f5" stroke="#9aa3ab"/>
+  <text x="320" y="59" font-size="15" text-anchor="middle" fill="#1a1d21">AIとの会話は1つだけ</text>
+  <line x1="320" y1="74" x2="320" y2="90" stroke="#9aa3ab" stroke-width="2"/>
+  <rect x="60" y="92" width="150" height="40" rx="8" fill="#ffffff" stroke="#9aa3ab"/>
+  <text x="135" y="117" font-size="13.5" text-anchor="middle" fill="#1a1d21">ログイン画面</text>
+  <text x="222" y="117" font-size="15" fill="#5b6470">→ 終わってから</text>
+  <rect x="330" y="92" width="150" height="40" rx="8" fill="#ffffff" stroke="#9aa3ab"/>
+  <text x="405" y="117" font-size="13.5" text-anchor="middle" fill="#1a1d21">データ保存を直す</text>
+  <text x="492" y="117" font-size="15" fill="#5b6470">→ 次へ</text>
+  <text x="0" y="158" font-size="13.5" fill="#5b6470">順番に進むので時間がかかり、会話が長くなってAIが混乱しやすい。</text>
+  <line x1="0" y1="178" x2="640" y2="178" stroke="#e6e8eb" stroke-width="2"/>
+  <text x="0" y="208" font-size="16" font-weight="700" fill="#1a1d21">作業を分けて同時に進める場合（公式チームのやり方）</text>
+  <rect x="220" y="220" width="200" height="42" rx="8" fill="#fff7ed" stroke="#b45309"/>
+  <text x="320" y="247" font-size="15" text-anchor="middle" fill="#1a1d21">アプリの改修の仕事</text>
+  <line x1="320" y1="262" x2="320" y2="278" stroke="#b45309" stroke-width="2"/>
+  <line x1="105" y1="278" x2="535" y2="278" stroke="#b45309" stroke-width="2"/>
+  <line x1="105" y1="278" x2="105" y2="294" stroke="#b45309" stroke-width="2"/>
+  <line x1="320" y1="278" x2="320" y2="294" stroke="#b45309" stroke-width="2"/>
+  <line x1="535" y1="278" x2="535" y2="294" stroke="#b45309" stroke-width="2"/>
+  <rect x="10" y="296" width="190" height="64" rx="8" fill="#fff7ed" stroke="#b45309"/>
+  <text x="105" y="322" font-size="14" text-anchor="middle" fill="#1a1d21">担当1：ログイン画面</text>
+  <text x="105" y="344" font-size="12" text-anchor="middle" fill="#5b6470">自分のコピーで作業</text>
+  <rect x="225" y="296" width="190" height="64" rx="8" fill="#fff7ed" stroke="#b45309"/>
+  <text x="320" y="322" font-size="14" text-anchor="middle" fill="#1a1d21">担当2：保存の仕組み</text>
+  <text x="320" y="344" font-size="12" text-anchor="middle" fill="#5b6470">自分のコピーで作業</text>
+  <rect x="440" y="296" width="190" height="64" rx="8" fill="#fff7ed" stroke="#b45309"/>
+  <text x="535" y="322" font-size="14" text-anchor="middle" fill="#1a1d21">担当3：不具合の原因</text>
+  <text x="535" y="344" font-size="12" text-anchor="middle" fill="#5b6470">自分のコピーで作業</text>
+  <line x1="105" y1="360" x2="105" y2="384" stroke="#047857" stroke-width="2"/>
+  <line x1="320" y1="360" x2="320" y2="384" stroke="#047857" stroke-width="2"/>
+  <line x1="535" y1="360" x2="535" y2="384" stroke="#047857" stroke-width="2"/>
+  <line x1="105" y1="384" x2="535" y2="384" stroke="#047857" stroke-width="2"/>
+  <line x1="320" y1="384" x2="320" y2="398" stroke="#047857" stroke-width="2"/>
+  <rect x="170" y="400" width="300" height="42" rx="8" fill="#ecfdf5" stroke="#047857"/>
+  <text x="320" y="427" font-size="15" text-anchor="middle" fill="#1a1d21">終わったら、1つにまとめる</text>
+  <text x="0" y="470" font-size="13.5" fill="#5b6470">3つの作業が同じ時刻に進む。担当ごとに作業コピーが分かれているので、</text>
+  <text x="0" y="486" font-size="13.5" fill="#5b6470">同じファイルを取り合って上書きし合うことがない。</text>
+</svg>
+</figure>
   <p>もう1つ、調べ物専用の「手伝い役AI」を使うやり方もある（この手伝い役を subagent と呼ぶ）。手伝い役にコード全体を調べさせて、メインのAIには「結論だけ」を返させる。手伝い役にも作業コピーを分けると、大きな変更をまとめて頼んでも、作業同士がぶつからない。</p>
   <h3>なぜ効くか</h3>
   <p>狙いは「速さ」よりも「ごちゃごちゃにしないこと」。調べ物の途中の大量のメモやファイルの中身がメインの会話に入り込むと、会話が重くなって、大事な指示が埋もれてしまう。調べ物は手伝い役の中だけで完結させて、メインには結論だけを持ち帰る、という分け方だ。</p>
