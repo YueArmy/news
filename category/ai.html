@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI — 超感ラボ</title>
-<style>body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:#fbfaf8;color:#1a1d21;line-height:1.95;font-size:clamp(16px,15.5px + 0.21vw,17px);letter-spacing:0.02em}.wrap{max-width:680px;margin:0 auto;padding:20px 16px 48px}h1{font-size:24px}a{color:#1d4ed8}.card{background:#fff;border:1px solid #e6e8eb;border-radius:10px;padding:18px;margin:16px 0}.meta{font-size:12.5px;color:#5b6470}.appbar{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding:6px 0 10px;margin-bottom:16px}.appbar-home{font-weight:700;text-decoration:none;color:var(--ink);white-space:nowrap}.appbar nav{display:flex;gap:8px;flex-wrap:wrap;margin:0}.appbar nav a,.backlink a{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;font-size:14px;text-decoration:none;color:var(--ink)}.backlink{margin:30px 0 10px}</style>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:#fbfaf8;color:#1a1d21;line-height:1.95;font-size:clamp(16px,15.5px + 0.21vw,17px);letter-spacing:0.02em}.wrap{max-width:680px;margin:0 auto;padding:20px 16px 48px}h1{font-size:24px}a{color:#1d4ed8}.card{background:#fff;border:1px solid #e6e8eb;border-radius:10px;padding:18px;margin:16px 0}.meta{font-size:12.5px;color:#5b6470}.appbar{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding:6px 0 10px;margin-bottom:16px}.appbar-home{font-weight:700;text-decoration:none;color:var(--ink);white-space:nowrap}.appbar nav{display:flex;gap:8px;flex-wrap:wrap;margin:0}.appbar nav a,.backlink a{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;font-size:14px;text-decoration:none;color:var(--ink)}.backlink{margin:30px 0 10px}
+/* news-theme (2026-11-07) */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:#14161a;display:flex;align-items:center;gap:10px;padding:0 12px;height:52px;border-bottom:3px solid #b45309}
+.topbar .brand{color:#fff;font-weight:700;font-size:17px;letter-spacing:.08em;text-decoration:none;white-space:nowrap}
+.topbar .brand span{color:#fbbf24}
+.topbar nav{display:flex;gap:0;overflow-x:auto;white-space:nowrap;margin:0;scrollbar-width:none}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{color:#e8e6df;text-decoration:none;font-size:13.5px;padding:7px 10px}
+body{padding-top:52px}
+h1{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;font-size:29px}
+article h2,.card h2,.notes h2{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif}
+article{border-radius:4px}
+article h2{font-size:21px}
+.card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
+.appbar{display:none}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="manifest" href="../manifest.json">
 <meta name="theme-color" content="#263026">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="超感ラボ">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 </head><body>
-<div class="appbar"><a class="appbar-home" href="../index.html">← 超感ラボ</a><nav><a href="../index.html">ホーム</a><a href="../category/ai.html">AI</a><a href="../category/psychology.html">心理学</a><a href="../category/marketing.html">マーケティング</a><a href="../archive.html">アーカイブ</a><a href="../stock.html">ストック</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモ</a></nav></div><div class="wrap">
+<div class="topbar"><a class="brand" href="../index.html">超感<span>ラボ</span></a><nav><a href="../index.html">ホーム</a><a href="../category/ai.html">AI</a><a href="../category/psychology.html">心理学</a><a href="../category/marketing.html">マーケティング</a><a href="../archive.html">アーカイブ</a><a href="../stock.html">ストック</a><a href="https://docs.google.com/spreadsheets/d/1Pe5c0vPUUH7VmDAqeSzsj-7bceOekwkZ1nNlt6osUek/edit">メモ</a></nav></div>
+<div class="wrap">
 <p><a href="../index.html">← 今日の号へ</a></p>
 <h1>AI</h1>
 <p>トップ層が実際に使っているAIエージェントの使い方（Claude／ChatGPT／Codex／v0）。公式発表より現場の実践を優先し、原典で裏取りしてから載せる。毎日更新。</p>
