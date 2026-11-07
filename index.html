@@ -20,6 +20,8 @@
   .card p{margin:4px 0}
   a{color:#1d4ed8}
   .meta{font-size:12.5px;color:var(--sub)}
+  .tag{display:inline-block;font-size:11.5px;font-weight:700;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:0 9px;margin-bottom:6px}
+  .tag.small{border-color:var(--line);color:var(--sub)}
   footer{color:var(--sub);font-size:12.5px;border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
 </style>
 </head>
@@ -41,15 +43,71 @@
 </header>
 
 <section class="card">
-  <p class="meta">最新号 ・ 2026年11月7日（土）・ 試作号（AI特集）</p>
-  <h2><a href="issues/2026-11-07.html">Claude Codeは「1つの長い会話で全部やらせない」、Codexの分担は説明ファイルに先に書く、チェック待ちが新しい詰まりどころ</a></h2>
-  <p>今日のポイント3つはリンク先の冒頭に。特集3本＋小ネタ5本＋試したいストック付き。</p>
+  <span class="tag">特集</span>
+  <h2><a href="issues/2026-11-07.html">全部やらせるな。分けた方が、速くて混乱しない</a></h2>
+  <p>Claude Codeの公式チームは、作業ごとに担当を分けて、それぞれにプロジェクトのコピーを持たせ、同じ時刻に進めている。1つの長い会話で全部をやらせるより、待ち時間も混乱も減る。</p>
+  <p class="meta">2026年11月7日 ・ AI ・ 試作号の特集1</p>
+</section>
+
+<section class="card">
+  <span class="tag">特集</span>
+  <h2><a href="issues/2026-11-07.html">分担は「頼み方」じゃなく「先に書いたメモ」で決まる</a></h2>
+  <p>Codexの手伝い役への分担は、その場の頼み方では安定しない。説明ファイル（AGENTS.md）に「こういう作業は手伝い役に渡す」と先に書いてあるときだけ、毎回ちゃんと発動する。</p>
+  <p class="meta">2026年11月7日 ・ AI ・ 試作号の特集2</p>
+</section>
+
+<section class="card">
+  <span class="tag">特集</span>
+  <h2><a href="issues/2026-11-07.html">作るのが速くなったら、渋滞は「チェック待ち」に移った</a></h2>
+  <p>270万件の開発記録を調べた調査では、AIが書く速さは上がったのに、人がチェックする行列が新しい詰まりどころになっていた。速くすべき場所が、作る側から確かめる側へ移っている。</p>
+  <p class="meta">2026年11月7日 ・ AI ・ 試作号の特集3</p>
+</section>
+
+<section class="card">
+  <span class="tag small">小ネタ速報</span>
+  <h2><a href="issues/2026-11-07.html">AIへの説明メモは、短いほど効く</a></h2>
+  <p>AIが毎回読む説明メモは、長く書くほど毎回の負担になる。目安は200行より短く。気に入ったら、スプレッドシートの「小ネタ選択」タブで○を付けると記事になる。</p>
+  <p class="meta">2026年11月7日 ・ AI</p>
+</section>
+
+<section class="card">
+  <span class="tag small">小ネタ速報</span>
+  <h2><a href="issues/2026-11-07.html">説明メモは2つ書くな。1つに寄せろ</a></h2>
+  <p>ツールごとに説明メモを分けると、直し忘れが出る。中身は1つのファイルに寄せて、もう一方には「そっちを読んで」と1行だけ書くやり方がある。</p>
+  <p class="meta">2026年11月7日 ・ AI</p>
+</section>
+
+<section class="card">
+  <span class="tag small">小ネタ速報</span>
+  <h2><a href="issues/2026-11-07.html">900人の会社のAIチームは、作業を4段階に分けていた</a></h2>
+  <p>調べる→計画を立てる→やることを決める→作る。大事な情報は会話の外のファイルに残し、会話は作業ごとに分けるのが共通の型だった。</p>
+  <p class="meta">2026年11月7日 ・ AI</p>
+</section>
+
+<section class="card">
+  <span class="tag small">小ネタ速報</span>
+  <h2><a href="issues/2026-11-07.html">画面づくりは「小さく頼んで、合格条件まで書く」</a></h2>
+  <p>画面を作るAI（v0）は、最初は小さく頼み、「何ができたら合格か」まで書くと外しにくい。いきなり本番に入れず、コピーで確かめてから取り込む。</p>
+  <p class="meta">2026年11月7日 ・ AI</p>
+</section>
+
+<section class="card">
+  <span class="tag small">小ネタ速報</span>
+  <h2><a href="issues/2026-11-07.html">Codexの手伝い役は自作できる。でも権限は親ゆずり</a></h2>
+  <p>決まったフォルダに設定ファイルを置くと、自分専用の手伝い役が作れる。ただし読み書きの許可は元の会話の設定を引き継ぐので、先に親側の範囲を決めておく。</p>
+  <p class="meta">2026年11月7日 ・ AI</p>
+</section>
+
+<section class="card">
+  <h2>参加のしかた（君の入力がネタになる）</h2>
+  <p>・<strong>疑問・深掘り</strong>：気になることや深掘りしたいテーマは、スプレッドシートの「疑問・深掘り」タブに書いておく。Museが毎朝読みに来て、記事にしてリンクを書き戻す。</p>
+  <p>・<strong>小ネタ選択</strong>：小ネタ速報の中で「もっと知りたい」ものは、「小ネタ選択」タブで○を付ける。選ばれたものが特集記事に育つ。</p>
+  <p>・<strong>メモと返し</strong>：読んだ感想や試した結果は各カテゴリのタブへ。返しは翌朝の号に載る。</p>
 </section>
 
 <section class="card">
   <h2>このサイトの回し方</h2>
   <p>特集の主役は日替わり：AIは毎日、心理学とマーケティングは隔日で第2特集、日曜は3領域をつなぐ週次統合。選定基準はカテゴリ共通で「コード／設定／数字／再現手順のどれかがあること」。心理学は一次情報・研究を優先し、マーケティングは数字のある実務事例を優先する。</p>
-  <p>読んだメモはGoogleスプレッドシート側に書く（サイトには載せない）。メモへの返しは翌朝の号に載る。</p>
 </section>
 
 <footer>運営：ゆや専用の超感ラボ（Museが毎朝作成）。出典は各記事内に明記。</footer>
