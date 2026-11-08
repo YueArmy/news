@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>超感ラボ — 2026-11-09 通常号</title>
+<style>
+  :root{--ink:#1a1d21;--sub:#5b6470;--line:#e6e8eb;--accent:#b45309;--bg:#fbfaf8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:clamp(16px,15.5px + 0.21vw,17px);letter-spacing:0.02em}
+  .wrap{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+  .kicker{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  h1{font-size:26px;margin:4px 0 2px;line-height:1.35}
+  .date{color:var(--sub);font-size:13px}
+  .tldr{background:var(--ink);color:#fff;border-radius:10px;padding:16px 18px;margin:20px 0}
+  .tldr h2{font-size:13px;letter-spacing:.15em;margin:0 0 8px;color:#fbbf24}
+  .tldr ol{margin:0;padding-left:20px}
+  .tldr li{margin:6px 0}
+  article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;background:#fef3c7;color:#92400e;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+  article h2{font-size:19px;margin:2px 0 8px;line-height:1.45}
+  article h3{font-size:13px;letter-spacing:.1em;color:var(--accent);margin:14px 0 4px}
+  article p{margin:0} article p+p{margin-top:26px}
+  .try{background:#fffbeb;border:1px dashed #d97706;border-radius:8px;padding:10px 14px;margin-top:10px}
+  .try p{margin:2px 0}
+  .meta{font-size:12.5px;color:var(--sub);margin-top:10px}
+  a{color:#1d4ed8}
+  .notes{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .notes h2{font-size:17px;margin:0 0 8px}
+  .notes li{margin:10px 0}
+  .stock li{margin:6px 0}
+  footer{color:var(--sub);font-size:12.5px;border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+  code{background:#f1f3f5;border-radius:4px;padding:0 5px;font-size:.9em}
+
+  figure.labfig { background-color:#fdfdf4; background-image:linear-gradient(#dde7d8 1px,transparent 1px),linear-gradient(90deg,#dde7d8 1px,transparent 1px); background-size:22px 22px; border:1px solid #cfdcc8; border-radius:8px; padding:14px 12px 10px; margin:14px 0; }
+  figure.labfig figcaption { font-family:'Zen Kurenaido',sans-serif; font-size:15px; color:#40513c; margin-top:8px; }
+  figure.labfig .stamp { display:inline-block; border:2px solid #c0392b; color:#c0392b; border-radius:6px; padding:1px 7px; font-weight:700; transform:rotate(-4deg); font-size:12px; margin-left:8px; font-family:sans-serif; }
+.appbar{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding:6px 0 10px;margin-bottom:16px}.appbar-home{font-weight:700;text-decoration:none;color:var(--ink);white-space:nowrap}.appbar nav{display:flex;gap:8px;flex-wrap:wrap;margin:0}.appbar nav a,.backlink a{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;font-size:14px;text-decoration:none;color:var(--ink)}.backlink{margin:30px 0 10px}
+/* news-theme (2026-11-07) */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:#14161a;display:flex;flex-direction:column;align-items:stretch;padding:0;border-bottom:3px solid #b45309}
+.topbar .brand{color:#fff;font-weight:700;font-size:17px;letter-spacing:.08em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;height:52px;padding:0 14px}
+.topbar .brand span{color:#fbbf24}
+.topbar nav{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;white-space:nowrap;margin:0;padding:8px 12px;background:#fbfaf8;scrollbar-width:none}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{border:1px solid #e6e8eb;background:#fff;border-radius:999px;padding:4px 14px;font-size:14px;line-height:1.5;text-decoration:none;color:#1a1d21}
+body{padding-top:102px}
+h1{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;font-size:29px}
+article h2,.card h2,.notes h2{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif}
+article{border-radius:4px}
+article h2{font-size:21px}
+.card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
+.appbar{display:none}
+.topbar .brandrow{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 8px 0 14px}
+.topbar .brand{height:auto;padding:0}
+.menubtn{background:transparent;border:1px solid #3a3f46;color:#fff;border-radius:6px;font-size:14px;padding:6px 14px;cursor:pointer;font-family:inherit}
+.dropdown{position:fixed;top:108px;right:10px;z-index:70;background:#fff;border:1px solid #e6e8eb;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.20);padding:6px;min-width:190px;display:none}
+.dropdown.open{display:block}
+.dropdown button,.dropdown a{display:block;width:100%;text-align:left;background:none;border:none;padding:11px 12px;font-size:15px;color:#1a1d21;text-decoration:none;cursor:pointer;font-family:inherit;box-sizing:border-box}
+.issue-list{margin:10px 0 2px;padding-left:20px}
+.issue-list li{margin:7px 0}
+article[id],section[id]{scroll-margin-top:112px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#263026">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="超感ラボ">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<div class="topbar"><div class="brandrow"><a class="brand" href="../index.html">超感<span>ラボ</span></a><button class="menubtn" type="button">メニュー</button></div><nav><a href="../index.html">ホーム</a><a href="../category/ai.html">AI</a><a href="../category/psychology.html">心理学</a><a href="../category/marketing.html">マーケティング</a><a href="../archive.html">アーカイブ</a><a href="../stock.html">ストック</a><a href="../memo.html">メモ</a></nav></div>
+<div class="dropdown"><button id="menu-reload" type="button">↻ 更新する（最新を読み直す）</button><a href="../index.html">ホーム（タイムライン）</a><a href="../archive.html">アーカイブ</a><a href="../memo.html">メモを開く</a></div>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI × マーケティング</div>
+  <h1>Claudeが書いたコードを、同じ画面でCodexに点検させる——公式の仕組みが出た</h1>
+  <div class="date">2026年11月9日（月）｜通常号｜直近約36時間の公開情報から</div>
+</header>
+
+<section class="tldr">
+  <h2>今日のポイント — この3つだけ読めば号全体の地図がつかめる</h2>
+  <ol>
+    <li><b>OpenAIの公式プラグインを入れると、Claude Codeの画面の中でCodexに「書いたコードを見直して」と頼めるようになる。</b>ターミナルを2つ開いてコピー＆ペーストする必要がなくなる。点検は読み取り専用で、直すのは別の命令の仕事（11月8日更新の解説記事）。</li>
+    <li><b>ChatGPT広告は、Google検索広告と比べると、1回の訪問あたりの売上が0.89ドル対2.45ドル、買う人の割合は0.37%対1.17%だった</b>（102社の調査、11月2日報道）。今日11月9日から入札の仕組みも変わるので、1クリックの値段の目安「約0.26ドル」が分かれ目になる。</li>
+    <li><b>Claude Codeで裏で動く手伝い役の「今何してるか」表示が、約99%安くなった。</b>1回の表示を書くのに会話全体を読み直さなくなったからで、同じ制限でも約6%多く頼める（11月4日発表、バージョン2.1.316以降）。</li>
+  </ol>
+  <p style="font-size:12.5px;color:#d6d3cd;margin:10px 0 0">書き方のルール：専門用語は最初に出たところで普通の言葉で言い直す。読んだだけで場面と意味が浮かぶ文で書く。</p>
+</section>
+
+<article id="f1">
+  <span class="tag">特集 1 ・ AI</span>
+  <h2>Claudeが書いたコードを、同じ画面でCodexに点検させる公式の仕組みが出た</h2>
+  <h3>誰が・何をした</h3>
+  <p>OpenAIが、Claude Codeの中でCodexを呼べる公式プラグイン「codex-plugin-cc」を公開した。Claude Codeの会話の中に、Codexを呼ぶ命令が8つ増える。解説記事（AI Frontier Post、11月8日更新）が、実際にインストールして8つの命令をすべて確認した。GitHubでは約3万5千スターが付いている。</p>
+  <p>具体的には、こういう絵だ。Claudeがコードを書いたあと、同じ画面で「Codex、見直して」と頼む。Codexが別の目で読み、指摘だけを返す。ターミナルを2つ開いて、コードをコピーして、別の画面に貼る必要がない。2つのエージェントは同じフォルダを共有するが、頭の中身は共有しない。だからこそ、作ったのとは別の目で見られる、というわけだ。</p>
+  <h3>入れるのは3行、よく使うのは3つの命令</h3>
+  <p>入れるのは、Claude Codeの会話の中で打つ3行だけ。<code>/plugin marketplace add openai/codex-plugin-cc</code>、<code>/plugin install codex@openai-codex</code>、<code>/reload-plugins</code>。バージョン1.0.6が今の最新だ。</p>
+  <p>よく使うのは3つ。1つ目は <code>/codex:review</code>。まだ保存していない変更を、Codexが読み取り専用で点検する。直したりはしない。2つ目は <code>/codex:adversarial-review</code>。コードが正しいかではなく、設計そのものが正しいかを疑う。キャッシュや再試行の決め方など、判断が分かれる変更に使う。3つ目は <code>/codex:rescue</code>。バグの調査や修正を、Codexに丸ごと渡す。長い点検は <code>--background</code> で裏に回し、<code>/codex:status</code> と <code>/codex:result</code> で結果を受け取る。会話ごとCodexに引っ越す <code>/codex:transfer</code> もある。</p>
+  <h3>気をつけたいところ</h3>
+  <p>Codexを使うには、ChatGPTの契約かOpenAIのAPIキーが必要だ。プラグイン自体は無料。点検はgitのリポジトリ（変更の履歴を残す仕組み）の中でしか動かない。点検の指摘はそのまま信じず、バグを再現するテストを書いて確かめてから直す。昨日の号で出てきた「見直す側がテストを動かせないと、正しいものを壊すこともある」という話と同じで、点検はあくまで指摘であって、答えではない。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>次にClaude Codeで変更を作ったら、保存する前に <code>/codex:review</code> を1回だけ打つ。返ってきた指摘はそのまま直さず、バグを再現するテストを書いて確かめてから直す。点検を「保存の前の最後の関所」にする実験だ。</p>
+  </div>
+  <p class="meta">出典：AI Frontier Post「Two agents, one repo: run Claude Code and Codex together with OpenAI's official plugin」（11月8日更新）／どれくらい確かか：中〜高。解説記事が実機でインストールと8命令を確認済み。ただし実際の点検・救済の呼び出しは、筆者も自分の契約が必要なため、命令ファイルとREADMEからの確認にとどまる、と記事自身が明記している<br>
+  <a href="https://aifrontierpost.com/articles/claude-code-codex-plugin-tutorial/">aifrontierpost.com — Two agents, one repo: run Claude Code and Codex together with OpenAI's official plugin</a></p>
+</article>
+
+<article id="f2">
+  <span class="tag">特集 2 ・ マーケティング</span>
+  <h2>ChatGPT広告、1回の訪問で生む売上はGoogleの3分の1——今日から入札も変わる</h2>
+  <h3>誰が・何をした</h3>
+  <p>ウィーン経済大学のMaximilian Kaiserと、フランクフルト金融経営大学院のChristian Schulzeの研究。ワーキングペーパー（査読前の研究論文、2026年10月）が、1,898のネットショップ、約100億回の訪問を分析した。うち売上の記録がそろった102社で、ChatGPT広告とGoogle検索広告の働きを比べた。Search Engine Journalなどが11月2〜3日に報じた。</p>
+  <p>具体的には、こんな数字だ。アメリカの訪問1回あたりの売上は、ChatGPT広告が0.89ドル、Google検索広告が2.45ドル。買う人の割合は、ChatGPT広告が0.37%、Google検索広告が1.17%。102社のうち73社は、ChatGPT広告から売上ゼロだった。両方に出した87社のうち84社が、ChatGPT広告の方が1訪問あたりの売上が低かった。ChatGPT広告から生まれた買い物570件のうち、66%は1社だけのものだった。Googleと同じだけの儲けを出すには、ChatGPT広告の1クリックは約0.26ドルまで、という計算も出ている。</p>
+  <h3>今日からの変化：入札の仕組みが変わる</h3>
+  <p>11月9日（月）の今日から、ChatGPT広告の入札の仕組みが変わる。新しく作る「買ってもらう目的」の広告は、1件あたりの目標の値段を指定する方式に。「クリックを集める目的」の広告は、1クリックあたりの目標の値段を指定する方式に変わる。値段の決め方が変わる日なので、上の「1クリック約0.26ドル」という目安と一緒に見るとよい。</p>
+  <h3>注意して読みたいところ</h3>
+  <p>これは査読前の論文で、データは2026年8月22日まで。広告を出した会社だけの比較なので、広告そのものが原因で売上が低いとまでは言えない。データを出した会社の顧問が著者の一人、という利害の注記もある。ただし、昨日の号のFlipsnackの話（登録が3倍）と並べると、見え方が変わる。「登録が増えた」と「売上が増えた」は別の話で、測るもの（登録か売上か）で結論が変わる、という昨日の話の裏側だ。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>広告でもAIへの頼み文でも、「数えたいのはクリックか、登録か、売上か」を先に1行で決める。ChatGPT広告を出すなら、1クリックが0.26ドルを超えていないかを確かめる。測るものを先に決める実験だ。</p>
+  </div>
+  <p class="meta">出典：Kaiser &amp; Schulze (2026) ワーキングペーパー「Can Advertising Fund Free AI? Evidence from ChatGPT's International Advertising Rollout」／Search Engine Journal（11月2日）、MediaPost（11月3日）／入札変更：vanaxity（11月8日更新）／どれくらい確かか：中。1,898社の大きなデータだが査読前で、売上は1社に偏っている<br>
+  <a href="https://anythingengineoptimization.com/item/2026-11-02-chatgpt-ads-study-finds-paid-visits-earned-0-89-each-against-2-45-for/">ChatGPT Ads study: $0.89 per paid visit vs $2.45 on Google</a><br>
+  <a href="https://www.mediapost.com/publications/article/419152/advertisers-get-less-attention-from-paid-chatgpt-v.html">mediapost.com — Advertisers Get Less Attention From Paid ChatGPT Visits Than Paid Search</a><br>
+  <a href="https://vanaxity.com/insights/chatgpt-ads-bidding-target-cpa">vanaxity.com — ChatGPT Ads Bidding: What Changes on November 9, 2026</a></p>
+</article>
+
+<article id="f3">
+  <span class="tag">特集 3 ・ AI</span>
+  <h2>裏で動く手伝い役の「今何してるか」表示が、約99%安くなった</h2>
+  <h3>誰が・何をした</h3>
+  <p>Anthropicの開発者アカウント @ClaudeDevs が11月4日に発表した。Claude Codeで裏で動く手伝い役（バックグラウンド・サブエージェント）の状態表示が、使う制限を食わなくなった。Claude Codeのバージョン2.1.316以降、コマンド画面だけの変更だ。</p>
+  <p>具体的には、こういう絵だ。手伝い役は30秒ごとに「今何してるか」の1行を書き直していた。今までは、そのたびに会話全体を読み直していた。長い会話なら、1行を書くためだけに何千文字も読み直す、という無駄があった。今は小さいモデルのHaiku 5.5が、短いメモから1行を書く。1回の表示のコストは約99%減り、手伝い役を使った作業全体では制限の消費が約5%減って、同じ制限で約6%多く頼める、というのがAnthropicの発表だ。1時間に120回あった表示が、ほぼタダになった計算だ。</p>
+  <h3>注意して読みたいところ</h3>
+  <p>99%減るのは「表示を書く」部分だけ。手伝い役そのものの仕事（コードを書く・テストを回す）は、元のモデルがそのままやる。数字はAnthropic自身の測定で、測り方は公開されていない。デスクトップアプリにはこの表示がないので、変わるのはコマンド画面だけ。とはいえ、「分ける」ほど裏の手伝い役が増える昨日の流れでは、見守りのコストが下がるのは、分ける側の味方だ。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>Claude Codeを2.1.316以降に上げて、裏で手伝い役を動かす作業を1回やってみる。制限の減り方が気になるなら、作業の前後で残りの制限を確認する。</p>
+  </div>
+  <p class="meta">出典：@ClaudeDevs（Anthropic、11月4日）／解説：fourweekmba.com、pasqualepillitteri.it／どれくらい確かか：中。公式発表がもとだが、数字の測り方は非公開で、外部の検証はない<br>
+  <a href="https://fourweekmba.com/ai-claude-code-subagent-status-updates-now-cost-about-99-less/">fourweekmba.com — Claude Code Subagent Status Updates Now Cost About 99% Less</a><br>
+  <a href="https://pasqualepillitteri.it/en/news/30300/claude-code-subagent-status-line-usage-limits">pasqualepillitteri.it — Claude Code usage limits drop 5%, but the subagent fix looks like a bug</a></p>
+</article>
+
+<section class="notes" id="notes">
+  <h2>小ネタ速報</h2>
+  <ul>
+    <li><b>3〜5台まで並列、の上限は、エージェントの速さじゃなく人の点検時間で決まる。</b>3つの仕事を3台に分けて、昼までに3つの変更案ができても、点検する人が追いつかなければ詰まる。点検の列が詰まったら、台数を減らすのが先。1つのファイルは1台だけが触る、という決まりも同じ理由（Medium、11月7日）。<br><a href="https://medium.com/cagris-biz-stack/run-3-5-ai-coding-agents-in-parallel-without-losing-control-90f87d3d6b0d">medium.com — Run 3–5 AI coding agents in parallel without losing control</a></li>
+    <li><b>100台のエージェントを動かす会社は、段階を踏んで増やしていた。</b>1台から100台への段梯子で、段ごとに壊れるものが違う。Stripeは「CI（自動テスト）は1〜2回まで」、Uberは「エージェントと社内システムの間に共通の関所を置く」。いきなり100台ではなく、1段ずつ登る（SRE Lab、11月8日更新）。<br><a href="https://lab.sallyroth.dev/fleet/">lab.sallyroth.dev — One Agent to Hundreds</a></li>
+    <li><b>商品写真の並びに、特徴と利点を1枚の図で足しただけで、買う人が15%増えた。</b>トラックの荷台カバーを売るDiamondBack Coversの事例（11月6日）。新しい人を集めたんじゃなく、買おうと見ている人に、選ぶ理由が伝わる場所へ情報を置いた。広告費も値下げもなし。<br><a href="https://medium.com/cagris-biz-stack/one-infographic-in-a-product-gallery-lifted-conversions-15-7ab8c11da2c1">medium.com — One infographic in a product gallery lifted conversions 15%</a></li>
+    <li><b>ページの一番上の動画は、13万件のテストでは成約を下げていた。</b>動画を平均16秒しか見ないのに、45秒分の注意を食う。最初の画面は、動画で飾るより、買う理由を1行で伝える方が効く、という結果（Medium、11月5日）。<br><a href="https://medium.com/@auignatenko/your-hero-video-might-be-killing-conversions-data-from-130-000-split-tests-2b3c947a2e16">medium.com — Your hero video might be killing conversions. Data from 130,000 split tests</a></li>
+    <li><b>Anthropicの10月22日の指針：分担を細かくしすぎず、1つのループに戻すと、ある顧客では約2倍速くなった。</b>分担が効くのは「並列に走らせる仕事」と「文脈が膨らむ仕事」だけ。問題の種類で分けるのではなく、文脈（その仕事に必要な情報の量）で分ける、という分け方（CellCog、11月4日更新）。<br><a href="https://cellcog.ai/blog/one-agent-or-subagents/">cellcog.ai — One Agent or Subagents? What We Learned Running AI Employees</a></li>
+  </ul>
+</section>
+
+<section class="notes stock">
+  <h2>試したいストック（今日分）</h2>
+  <ul>
+    <li>Claude Codeで変更を作ったら、保存する前に /codex:review を1回打つ（特集1）</li>
+    <li>広告や頼み文で「数えたいのはクリックか登録か売上か」を先に1行で決める（特集2）</li>
+    <li>Claude Codeを2.1.316以降に上げて、裏の手伝い役を1回動かしてみる（特集3）</li>
+  </ul>
+</section>
+
+<footer>
+  今日は月曜の通常号。AIは毎日、心理学とマーケティングは隔日で第2特集。明日は火曜で、心理学が第2特集の番。来週の日曜はまた3領域をつなぐ週次統合。
+</footer>
+
+</div>
+<p class="backlink"><a href="../index.html">← タイムライン（ホーム）に戻る</a></p>
+<!-- auto-reload -->
+<script>
+(function(){var t=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){if(Date.now()-t>5*60*1000){location.reload();}t=Date.now();}});window.addEventListener('pageshow',function(e){if(e.persisted){location.reload();}});})();
+</script>
+<!-- menu-script -->
+<script>
+(function(){var b=document.querySelector('.menubtn'),d=document.querySelector('.dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});document.addEventListener('click',function(){d.classList.remove('open');});var r=document.getElementById('menu-reload');if(r){r.addEventListener('click',function(){var u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());});}})();
+</script>
+</body>
+</html>
