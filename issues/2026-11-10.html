@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>超感ラボ — 2026-11-10 通常号</title>
+<style>
+  :root{--ink:#1a1d21;--sub:#5b6470;--line:#e6e8eb;--accent:#b45309;--bg:#fbfaf8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:clamp(16px,15.5px + 0.21vw,17px);letter-spacing:0.02em}
+  .wrap{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+  .kicker{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  h1{font-size:26px;margin:4px 0 2px;line-height:1.35}
+  .date{color:var(--sub);font-size:13px}
+  .tldr{background:var(--ink);color:#fff;border-radius:10px;padding:16px 18px;margin:20px 0}
+  .tldr h2{font-size:13px;letter-spacing:.15em;margin:0 0 8px;color:#fbbf24}
+  .tldr ol{margin:0;padding-left:20px}
+  .tldr li{margin:6px 0}
+  article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;background:#fef3c7;color:#92400e;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+  article h2{font-size:19px;margin:2px 0 8px;line-height:1.45}
+  article h3{font-size:13px;letter-spacing:.1em;color:var(--accent);margin:14px 0 4px}
+  article p{margin:0} article p+p{margin-top:26px}
+  .try{background:#fffbeb;border:1px dashed #d97706;border-radius:8px;padding:10px 14px;margin-top:10px}
+  .try p{margin:2px 0}
+  .meta{font-size:12.5px;color:var(--sub);margin-top:10px}
+  a{color:#1d4ed8}
+  .notes{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .notes h2{font-size:17px;margin:0 0 8px}
+  .notes li{margin:10px 0}
+  .stock li{margin:6px 0}
+  footer{color:var(--sub);font-size:12.5px;border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+  code{background:#f1f3f5;border-radius:4px;padding:0 5px;font-size:.9em}
+
+  figure.labfig { background-color:#fdfdf4; background-image:linear-gradient(#dde7d8 1px,transparent 1px),linear-gradient(90deg,#dde7d8 1px,transparent 1px); background-size:22px 22px; border:1px solid #cfdcc8; border-radius:8px; padding:14px 12px 10px; margin:14px 0; }
+  figure.labfig figcaption { font-family:'Zen Kurenaido',sans-serif; font-size:15px; color:#40513c; margin-top:8px; }
+  figure.labfig .stamp { display:inline-block; border:2px solid #c0392b; color:#c0392b; border-radius:6px; padding:1px 7px; font-weight:700; transform:rotate(-4deg); font-size:12px; margin-left:8px; font-family:sans-serif; }
+.appbar{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding:6px 0 10px;margin-bottom:16px}.appbar-home{font-weight:700;text-decoration:none;color:var(--ink);white-space:nowrap}.appbar nav{display:flex;gap:8px;flex-wrap:wrap;margin:0}.appbar nav a,.backlink a{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;font-size:14px;text-decoration:none;color:var(--ink)}.backlink{margin:30px 0 10px}
+/* news-theme (2026-11-07) */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:#14161a;display:flex;flex-direction:column;align-items:stretch;padding:0;border-bottom:3px solid #b45309}
+.topbar .brand{color:#fff;font-weight:700;font-size:17px;letter-spacing:.08em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;height:52px;padding:0 14px}
+.topbar .brand span{color:#fbbf24}
+.topbar nav{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;white-space:nowrap;margin:0;padding:8px 12px;background:#fbfaf8;scrollbar-width:none}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{border:1px solid #e6e8eb;background:#fff;border-radius:999px;padding:4px 14px;font-size:14px;line-height:1.5;text-decoration:none;color:#1a1d21}
+body{padding-top:102px}
+h1{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;font-size:29px}
+article h2,.card h2,.notes h2{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif}
+article{border-radius:4px}
+article h2{font-size:21px}
+.card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
+.appbar{display:none}
+.topbar .brandrow{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 8px 0 14px}
+.topbar .brand{height:auto;padding:0}
+.menubtn{background:transparent;border:1px solid #3a3f46;color:#fff;border-radius:6px;font-size:14px;padding:6px 14px;cursor:pointer;font-family:inherit}
+.dropdown{position:fixed;top:108px;right:10px;z-index:70;background:#fff;border:1px solid #e6e8eb;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.20);padding:6px;min-width:190px;display:none}
+.dropdown.open{display:block}
+.dropdown button,.dropdown a{display:block;width:100%;text-align:left;background:none;border:none;padding:11px 12px;font-size:15px;color:#1a1d21;text-decoration:none;cursor:pointer;font-family:inherit;box-sizing:border-box}
+.issue-list{margin:10px 0 2px;padding-left:20px}
+.issue-list li{margin:7px 0}
+article[id],section[id]{scroll-margin-top:112px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#263026">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="超感ラボ">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<div class="topbar"><div class="brandrow"><a class="brand" href="../index.html">超感<span>ラボ</span></a><button class="menubtn" type="button">メニュー</button></div><nav><a href="../index.html">ホーム</a><a href="../category/ai.html">AI</a><a href="../category/psychology.html">心理学</a><a href="../category/marketing.html">マーケティング</a><a href="../archive.html">アーカイブ</a><a href="../stock.html">ストック</a><a href="../memo.html">メモ</a></nav></div>
+<div class="dropdown"><button id="menu-reload" type="button">↻ 更新する（最新を読み直す）</button><a href="../index.html">ホーム（タイムライン）</a><a href="../archive.html">アーカイブ</a><a href="../memo.html">メモを開く</a></div>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI × 心理学</div>
+  <h1>夜中に回すClaude Codeが、許可待ちで止まらなくなる設定ができた</h1>
+  <div class="date">2026年11月10日（火）｜通常号｜直近約36時間の公開情報から</div>
+</header>
+
+<section class="tldr">
+  <h2>今日のポイント — この3つだけ読めば号全体の地図がつかめる</h2>
+  <ol>
+    <li><b>Claude Code 2.1.319で、自動モードの裏の判定が消えた。</b>サーバーが確かめられない呼び出しは、聞くか断るかになる。放っておく実行が許可待ちで朝まで止まるのを防ぐには、新しい設定「許可が出るまで待たずに断って進む」を入れる（11月6日リリース）。</li>
+    <li><b>緑の多い場所に近い子どもほど、注意のテストの成績が良く、学力も高かった</b>（約1万2千人の追跡調査、11月2日発表）。効くのは木や公園がある場所で、ただの草むらは弱い。スマホを見ながらでは回復しにくい。</li>
+    <li><b>同じ仕事をClaude Codeに頼むと11.42ドル・約1時間、Codexに頼むと7.04ドル・約25分だった。</b>点数はClaudeが62対55で上。ただし安い方のCodex（GPT-6.1 Sol）は54点で1.50ドルと、8点の差に7.6倍の値段が付いている（11月5日時点の独立テスト）。</li>
+  </ol>
+  <p style="font-size:12.5px;color:#d6d3cd;margin:10px 0 0">書き方のルール：専門用語は最初に出たところで普通の言葉で言い直す。読んだだけで場面と意味が浮かぶ文で書く。</p>
+</section>
+
+<article id="f1">
+  <span class="tag">特集 1 ・ AI</span>
+  <h2>夜中に回すClaude Codeが、許可待ちで止まらなくなる設定ができた</h2>
+  <h3>誰が・何をした</h3>
+  <p>Claude Codeが11月6日に3つ続けて更新された（バージョン2.1.317、2.1.318、2.1.319）。一番大きいのは2.1.319の変更で、「自動モード」（人がいなくてもAIが自分で判断して進むモード）の裏側の判定が消えた。週報「This week in Claude Code, Codex and Gemini CLI」（11月7日）が、変更履歴（CHANGELOG）の文言をそのまま引いて解説している。</p>
+  <p>具体的には、こういう絵だ。今まで自動モードは、サーバー側で「この呼び出しは安全か」を確かめられないとき、代わりに内蔵の判定（ビルトインの分類器）で決めていた。2.1.319からは、その代わりの判定がなくなった。サーバーが確かめられない呼び出しは、その場で「やっていいか」と聞くか、断るかのどちらかになる。対象になるのは、計測（テレメトリー）や機能フラグを切っている環境と、会社のAIの出入り口（LLMゲートウェイ）の後ろで動かす場合。Bedrock・Vertex・Foundryで動かす場合は変わらない。元の動きに戻したいときは、環境変数 <code>CLAUDE_CODE_AUTO_MODE_SERVER=0</code> を付ける。</p>
+  <h3>放っておく実行のための新しい設定</h3>
+  <p>夜中に回すような、人が見ていない実行では「聞く」が来ると朝まで止まる。そこで2.1.319には <code>permissions.denyInsteadOfPrompting</code> という新しい設定が入った。許可を聞く場面が来たら、待たずに「断る」として、そのまま次の作業に進む。ターミナルの画面でも、裏で動く手伝い役でも、チームで使う場面でも効く。断られた作業は「できなかった」として残るので、朝に結果を見れば、どこで止まったかが分かる。</p>
+  <p>ほかにも、細かいが地味に効く変更がある。2.1.317では、ネットやシェル（コマンドを打つ画面）の呼び出しが自分のメールアドレスを外に送る前に、確認を出すようになった。2.1.318では、ログインの期限が見えるようになった。<code>claude auth status</code> で期限（loginExpiresAt）が分かり、期限の10日前から警告が出る。夜中に回す実行が、ログイン切れで止まるのを防げる。あわせて、<code>sed</code> の命令が許可チェックをすり抜ける問題など、3つの安全面の修正も入った。</p>
+  <h3>気をつけたいところ</h3>
+  <p>「断って進む」は、止まるのを防ぐ代わりに、作業が途中で欠ける。断られた分は後で自分でやる必要がある。設定を入れたら、朝に「どこが断られたか」を必ず見る癖を付けたい。機能フラグの取得を切る <code>CLAUDE_CODE_DISABLE_FEATURE_FLAGS</code> を使うと、ついでに「暇なときの要約（アイドル時の圧縮）」も止まってしまう、という副作用もある。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>夜中や昼休みに回す実行があるなら、設定に <code>permissions.denyInsteadOfPrompting</code> を入れて1回回してみる。終わったら、どこが断られて残ったかを確認する。あわせて <code>claude auth status</code> でログインの期限も見る。</p>
+  </div>
+  <p class="meta">出典：aicoding-guide「This week in Claude Code, Codex and Gemini CLI (week of November 8, 2026)」（dev.to、11月7日）／どれくらい確かか：中〜高。変更履歴の文言を引いた解説で、設定名と環境変数名まで具体的に書かれている。ただし筆者自身の実機確認ではなく、週報のまとめがもと<br>
+  <a href="https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-8-2026-485k">dev.to — This week in Claude Code, Codex and Gemini CLI (week of November 8, 2026)</a></p>
+</article>
+
+<article id="f2">
+  <span class="tag">特集 2 ・ 心理学</span>
+  <h2>集中力が切れたら、緑の多い場所へ——1万2千人の子どもで確かめられた「注意の回復」</h2>
+  <h3>誰が・何をした</h3>
+  <p>ワシントン大学セントルイス校のCarina Fowlerたちの研究。雑誌 <i>Environment International</i>（2026年）に載った。アメリカの子ども約1万2千人を何年も追いかけるABCD調査（中央値の年齢は10歳）のデータを使い、「家の近くに緑が多い子どもは、集中力のテストで成績が良いか、学校の成績は良いか」を調べた。phys.orgが11月2日に報じた。</p>
+  <p>具体的には、こういう絵だ。「緑の多さ」は、住む地域の「木の葉が覆う割合」と「公園の割合」の平均で測った。緑に近いほど、子どもは「言われたことに注意を向けて続ける力」のテストで成績が良く、知識のテスト（結晶性知能——覚えた言葉や知識を使う力）でも点が高かった。家の収入やADHDの診断、SNSの使い方、安全だと感じるかどうかといった、成績に影響しそうな要素を統計で取り除いても、緑との関係は残った。</p>
+  <h3>どうして緑が注意を回復させるのか</h3>
+  <p>背景にある考え方は「注意回復理論」というものだ。集中して使う注意（directed attention＝意図して向ける注意）は、使い続けると疲れる。緑の場所は、注意をほどよく引きつけながら、頭をさまよわせる余地もくれる。その組み合わせが、疲れた注意を回復させる、という考え方だ。研究チームは、回復の理由が「体を動かすから」なのか「空気がきれいだから」なのかも確かめた。空気のきれいさとは関係があったが、体を動かす量とは関係がなかった。</p>
+  <p>ただし、どんな緑でもいいわけではない。「木の葉の覆いや公園がある場所」が効き、ただの草むらは弱い、と研究チームは言う。緑の場所にいても、SNSを見ながらでは回復しにくい。緑の場所で「安全だと感じる」ことも条件になる。静かな暗い部屋に入ればもっと回復しそうだが、過去の研究では、人は感覚を断たれる部屋や、自分の考えだけと向き合う静かな部屋を好まない、という。</p>
+  <h3>注意して読みたいところ</h3>
+  <p>これは、緑の多い場所に住む子どもとそうでない子どもを比べた観察の研究で、緑が原因だとまでは言えない。対象は子どもで、大人にも同じことが言えるかは、この研究だけでは分からない。ただ、日曜の号で出てきた「人の頭は一度に3〜4個しか持てない」という話と並べると、使い方が見えてくる。頭の中の置き場が3〜4個しかないなら、疲れた注意を回復させる場所を持つことは、仕事の設計の一部になる。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>集中力が切れたと感じたら、木や公園のある場所を10〜15分歩く。スマホは見ない。戻ってから次の作業が始めやすいかどうか、1回だけ確かめる。緑のある場所への移動自体が「注意の回復の時間」になる実験だ。</p>
+  </div>
+  <p class="meta">出典：Fowler et al.「Green space is associated with better directed attention and higher crystallized intelligence in middle childhood: Evidence from the ABCD study」<i>Environment International</i> (2026)／報道：phys.org（11月2日）／どれくらい確かか：中。査読のある雑誌に載った大規模な追跡データで、収入やADHDなども統計で取り除いている。ただし観察の研究で、緑が原因とは言い切れず、対象は子ども<br>
+  <a href="https://phys.org/news/2026-11-attention-nature.html">phys.org — To restore attention, reach out to nature</a></p>
+</article>
+
+<article id="f3">
+  <span class="tag">特集 3 ・ AI</span>
+  <h2>Claudeは1つの仕事に11.42ドル・1時間、Codexは7.04ドル・25分——8点の差にいくら払うか</h2>
+  <h3>誰が・何をした</h3>
+  <p>独立した計測サイトのArtificial Analysisが、Claude CodeとCodexを同じ仕事で比べた。2026年11月5日に読まれた数字で、解説サイトのHokaiが表にまとめた。各エージェントの一番点の高いモデルで、推論の手間を最大にして比べている。</p>
+  <p>具体的には、こんな数字だ。点数（Coding Agent Index v2.0）は、Claude Code（Opus 5.5）が62、Codex（GPT-6 Astra）が55。ほかの2つのテストでもClaudeが上で、Terminal-Benchは63%対56%、FrontierCodeは56%対49%。一方、1つの仕事にかかるお金はClaudeが11.42ドル、Codexが7.04ドル。時間はClaudeが約1時間、Codexが24.8分。使うトークン（AIが読む・書く文字の量の単位）はClaudeが1,450万、Codexが323万。Codexは39.4回のやり取りで済ませ、Claudeは146.4回かけていた。</p>
+  <h3>一番お得な組み合わせは、安い方のCodexだった</h3>
+  <p>一番役に立つ行は、一番安い強い組み合わせだ。CodexのGPT-6.1 Solは、54点で1つの仕事が1.50ドル、23.7分。ClaudeのOpus 5.5は62点で11.42ドル、約1時間。8点の差に、約7.6倍の値段が付いている。100の仕事に換算すると、Solが150ドル、Astraが704ドル、Opus 5.5が1,142ドルになる。ただし、これは従量課金（使った分だけ払う）の数字で、月額の契約では請求書ではなく「使える量の上限」に痛みが移る。月額で払っている人は、高い方を使えば上限に早くぶつかる、という読み方になる。</p>
+  <h3>注意して読みたいところ</h3>
+  <p>これは1つの独立したテストで、解説サイト自身も自分の手で同じテストを回してはいない。点数だけを見てはいけない、と計測サイト自身が注記している。同じ合計点でも、倉庫（リポジトリ）の仕事と、コマンド画面の仕事では得意不得意が違うからだ。使い分けの目安は、間違えたときの痛みだ。決済や認証、データの引っ越しのように、1つの間違いが高い仕事はClaude。量が多くて速さが大事な仕事はCodex、というのが解説の結論だ。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>自分の仕事を2つに分ける。「間違えると高い仕事」と「速さが大事な日常の仕事」。日常の仕事を1週間だけ、安い方の組み合わせ（CodexのSolなど）に回してみる。直しが増えたかどうかで、8点の差が自分に必要かどうかが分かる。</p>
+  </div>
+  <p class="meta">出典：Artificial Analysis「Claude Code vs. Codex」（2026年11月5日時点）／解説：Hokai「Codex vs Claude Code in 2026: Which Coding Agent?」／どれくらい確かか：中。同じ仕事での独立した計測だが、1回の計測で、解説サイト自身の再現テストはない。月額契約の人は、数字は上限の減り方として読む<br>
+  <a href="https://hokai.io/guides/codex-vs-claude-code">hokai.io — Codex vs Claude Code in 2026: Which Coding Agent?</a></p>
+</article>
+
+<section class="notes" id="notes">
+  <h2>小ネタ速報</h2>
+  <ul>
+    <li><b>Codex 0.167.0で、動いているエージェントを一覧で見る「司令室」が開けるようになった。</b><code>codex agents --no-daemon</code> で開く。終わった結果に未読の印が付き、見逃しにくくなった。つないだ先の切り替えも、画面を切り替えずにできる（dev.to、11月7日）。<br><a href="https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-8-2026-485k">dev.to — This week in Claude Code, Codex and Gemini CLI (week of November 8, 2026)</a></li>
+    <li><b>DeepSeekが「頼まれなくても動く」試作エージェントを出した。</b>Super-Agentは、開発者のグループチャットを見張り、頼まれなくても不具合を見つけて直し方を提案する、というもの。まだ試作で、公開はこれから（11月7日発表、11月9日更新のまとめより）。<br><a href="https://oday-bakkour.com/blog/ai-coding-tools-roundup-november-1-2026">oday-bakkour.com — OpenCode 2.2 Adds Claude Agent as DeepSeek Debuts Super-Agent</a></li>
+    <li><b>OpenCode 2.2は、Claude Codeのログインを使い回す仕組みを内蔵した。</b>別の契約なしで、Claude Codeで使っているログインのままClaudeのモデルで動く。オープンソースの道具の側が、Claudeの側に寄ってきている（10月30日リリース、11月9日更新のまとめより）。<br><a href="https://oday-bakkour.com/blog/ai-coding-tools-roundup-november-1-2026">oday-bakkour.com — OpenCode 2.2 Adds Claude Agent as DeepSeek Debuts Super-Agent</a></li>
+    <li><b>エージェントを回すときの止め方は、3つの上限で決める。</b>1回の実行の歩数、トークン・金額の上限、1日の上限。どれかを超えたら「途中で止まった」と分かる形で返す。モデルだけに「いつ止めるか」を決めさせない、という設計の話（Teksmobile、11月6日更新）。<br><a href="https://mail.teksmobile.com/insights/agentic-workflows-101/">teksmobile.com — Agentic Workflows: Loops, Tools and Limits</a></li>
+    <li><b>特定の音に過剰に反応する人（ミソフォニア）55人：作業記憶のテストで全体に成績が低かった。</b>嫌な音のときだけ悪いのではなく、どんな音でも悪かった。脳波では「雑音を抑える働き」のアルファ波が全体に弱かった。引き金そのものより、注意の抑え込み全般の問題らしい（MDPI、11月1日）。<br><a href="https://www.mdpi.com/2076-3425/16/11/1199">mdpi.com — Working Memory Disruption and Altered Alpha Dynamics in Misophonics</a></li>
+  </ul>
+</section>
+
+<section class="notes stock">
+  <h2>試したいストック（今日分）</h2>
+  <ul>
+    <li>夜中に回す実行に permissions.denyInsteadOfPrompting を入れて、どこが断られたか朝に見る（特集1）</li>
+    <li>集中力が切れたら、木や公園のある場所を10〜15分歩く。スマホは見ない（特集2）</li>
+    <li>仕事を「間違えると高い仕事」と「速さが大事な日常の仕事」に分け、日常の仕事を安い組み合わせに1週間回す（特集3）</li>
+  </ul>
+</section>
+
+<footer>
+  今日は火曜の通常号。AIは毎日、心理学とマーケティングは隔日で第2特集。明日は水曜で、マーケティングが第2特集の番。来週の日曜はまた3領域をつなぐ週次統合。
+</footer>
+
+</div>
+<p class="backlink"><a href="../index.html">← タイムライン（ホーム）に戻る</a></p>
+<!-- auto-reload -->
+<script>
+(function(){var t=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){if(Date.now()-t>5*60*1000){location.reload();}t=Date.now();}});window.addEventListener('pageshow',function(e){if(e.persisted){location.reload();}});})();
+</script>
+<!-- menu-script -->
+<script>
+(function(){var b=document.querySelector('.menubtn'),d=document.querySelector('.dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});document.addEventListener('click',function(){d.classList.remove('open');});var r=document.getElementById('menu-reload');if(r){r.addEventListener('click',function(){var u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());});}})();
+</script>
+</body>
+</html>
