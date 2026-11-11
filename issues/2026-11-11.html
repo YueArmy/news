@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>超感ラボ — 2026-11-11 通常号</title>
+<style>
+  :root{--ink:#1a1d21;--sub:#5b6470;--line:#e6e8eb;--accent:#b45309;--bg:#fbfaf8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:clamp(16px,15.5px + 0.21vw,17px);letter-spacing:0.02em}
+  .wrap{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+  .kicker{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  h1{font-size:26px;margin:4px 0 2px;line-height:1.35}
+  .date{color:var(--sub);font-size:13px}
+  .tldr{background:var(--ink);color:#fff;border-radius:10px;padding:16px 18px;margin:20px 0}
+  .tldr h2{font-size:13px;letter-spacing:.15em;margin:0 0 8px;color:#fbbf24}
+  .tldr ol{margin:0;padding-left:20px}
+  .tldr li{margin:6px 0}
+  article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;background:#fef3c7;color:#92400e;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+  article h2{font-size:19px;margin:2px 0 8px;line-height:1.45}
+  article h3{font-size:13px;letter-spacing:.1em;color:var(--accent);margin:14px 0 4px}
+  article p{margin:0} article p+p{margin-top:26px}
+  .try{background:#fffbeb;border:1px dashed #d97706;border-radius:8px;padding:10px 14px;margin-top:10px}
+  .try p{margin:2px 0}
+  .meta{font-size:12.5px;color:var(--sub);margin-top:10px}
+  a{color:#1d4ed8}
+  .notes{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .notes h2{font-size:17px;margin:0 0 8px}
+  .notes li{margin:10px 0}
+  .stock li{margin:6px 0}
+  footer{color:var(--sub);font-size:12.5px;border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+  code{background:#f1f3f5;border-radius:4px;padding:0 5px;font-size:.9em}
+
+  figure.labfig { background-color:#fdfdf4; background-image:linear-gradient(#dde7d8 1px,transparent 1px),linear-gradient(90deg,#dde7d8 1px,transparent 1px); background-size:22px 22px; border:1px solid #cfdcc8; border-radius:8px; padding:14px 12px 10px; margin:14px 0; }
+  figure.labfig figcaption { font-family:'Zen Kurenaido',sans-serif; font-size:15px; color:#40513c; margin-top:8px; }
+  figure.labfig .stamp { display:inline-block; border:2px solid #c0392b; color:#c0392b; border-radius:6px; padding:1px 7px; font-weight:700; transform:rotate(-4deg); font-size:12px; margin-left:8px; font-family:sans-serif; }
+.appbar{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding:6px 0 10px;margin-bottom:16px}.appbar-home{font-weight:700;text-decoration:none;color:var(--ink);white-space:nowrap}.appbar nav{display:flex;gap:8px;flex-wrap:wrap;margin:0}.appbar nav a,.backlink a{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;font-size:14px;text-decoration:none;color:var(--ink)}.backlink{margin:30px 0 10px}
+/* news-theme (2026-11-07) */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:#14161a;display:flex;flex-direction:column;align-items:stretch;padding:0;border-bottom:3px solid #b45309}
+.topbar .brand{color:#fff;font-weight:700;font-size:17px;letter-spacing:.08em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;height:52px;padding:0 14px}
+.topbar .brand span{color:#fbbf24}
+.topbar nav{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;white-space:nowrap;margin:0;padding:8px 12px;background:#fbfaf8;scrollbar-width:none}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{border:1px solid #e6e8eb;background:#fff;border-radius:999px;padding:4px 14px;font-size:14px;line-height:1.5;text-decoration:none;color:#1a1d21}
+body{padding-top:102px}
+h1{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;font-size:29px}
+article h2,.card h2,.notes h2{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif}
+article{border-radius:4px}
+article h2{font-size:21px}
+.card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
+.appbar{display:none}
+.topbar .brandrow{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 8px 0 14px}
+.topbar .brand{height:auto;padding:0}
+.menubtn{background:transparent;border:1px solid #3a3f46;color:#fff;border-radius:6px;font-size:14px;padding:6px 14px;cursor:pointer;font-family:inherit}
+.dropdown{position:fixed;top:108px;right:10px;z-index:70;background:#fff;border:1px solid #e6e8eb;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.20);padding:6px;min-width:190px;display:none}
+.dropdown.open{display:block}
+.dropdown button,.dropdown a{display:block;width:100%;text-align:left;background:none;border:none;padding:11px 12px;font-size:15px;color:#1a1d21;text-decoration:none;cursor:pointer;font-family:inherit;box-sizing:border-box}
+.issue-list{margin:10px 0 2px;padding-left:20px}
+.issue-list li{margin:7px 0}
+article[id],section[id]{scroll-margin-top:112px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#263026">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="超感ラボ">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<div class="topbar"><div class="brandrow"><a class="brand" href="../index.html">超感<span>ラボ</span></a><button class="menubtn" type="button">メニュー</button></div><nav><a href="../index.html">ホーム</a><a href="../category/ai.html">AI</a><a href="../category/psychology.html">心理学</a><a href="../category/marketing.html">マーケティング</a><a href="../archive.html">アーカイブ</a><a href="../stock.html">ストック</a><a href="../memo.html">メモ</a></nav></div>
+<div class="dropdown"><button id="menu-reload" type="button">↻ 更新する（最新を読み直す）</button><a href="../index.html">ホーム（タイムライン）</a><a href="../archive.html">アーカイブ</a><a href="../memo.html">メモを開く</a></div>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI × マーケティング</div>
+  <h1>Claudeの最上位が2割安く3割速く——普段使いはOpusのままでいい</h1>
+  <div class="date">2026年11月11日（水）｜通常号｜直近約36時間の公開情報から</div>
+</header>
+
+<section class="tldr">
+  <h2>今日のポイント — この3つだけ読めば号全体の地図がつかめる</h2>
+  <ol>
+    <li><b>Claudeの最上位モデル「Fable 5.2」が11月9日に出た。</b>値段は100万トークン（AIが読む・書く文字の量の単位）あたり入力8ドル・出力40ドルで、前の型より2割安い。出力は最大3割速くなった。重い仕事だけこっちに回すと、値段と時間の両方が下がる。ただしAnthropic自身は「ほとんどの仕事はOpus 5.5のままが起点」と言っている。</li>
+    <li><b>ChatGPTからサイトに来る人は、Googleの自然検索の100人に対し0.6人ほどと、まだごく少ない。</b>けれど買う・申し込む確率は13.8%で、Googleの3.02%の約5倍。量はGoogle、質はChatGPT、という分かれ目が見えた（100のサイト・1億4500万回の訪問の調査）。</li>
+    <li><b>Claude Code 2.1.321で、外部の手伝い役（MCPサーバー）につなぐとき「長く使える鍵（更新トークン）」が別の場所へ漏れる穴がふさがれた。</b>自動で更新される人はもう入っている。手動で上げている人は、<code>claude --version</code> で確かめて、2.1.321以降にしてほしい。</li>
+  </ol>
+  <p style="font-size:12.5px;color:#d6d3cd;margin:10px 0 0">書き方のルール：専門用語は最初に出たところで普通の言葉で言い直す。読んだだけで場面と意味が浮かぶ文で書く。</p>
+</section>
+
+<article id="f1">
+  <span class="tag">特集 1 ・ AI</span>
+  <h2>一番強いClaudeが2割安く3割速く——重い仕事だけ、こっちに回す</h2>
+  <h3>誰が・何をした</h3>
+  <p>Anthropicが11月9日、Claudeの一番強いモデル「Fable 5.2」と、同じ中身で安全の縛りをゆるめた「Mythos 5.2」を出した。Fableは誰でも使える。Mythosは、サイバー攻撃の防御や生命科学の審査を通った組織だけが使える。Claude Codeでは2.1.321から、Fable 5.2が既定のFableモデルになった。</p>
+  <p>具体的には、こういう数字だ。値段は100万トークンあたり入力8ドル・出力40ドル。前の型（Fable 5.1）は10ドル・50ドルだったので、2割安い。OpenAIの一番強いモデル GPT-6 Astra（10ドル・50ドル）よりも安い。出力は最大3割速い。さらに「速いモード」があり、2.5倍の速さで値段は2倍（16ドル・80ドル）になる。一度に覚えられる量（コンテキスト）は100万トークン、一度に出せる量は12万8千トークン。</p>
+  <h3>点数も上がったが、読み方に注意</h3>
+  <p>Anthropic自身の表では、コードを書くテスト「FrontierCode 2.0」で49.1%。前の型は32.4%、Opus 5.5は45.5%、GPT-6 Astraは42.8%だった。独立した計測サイト「Artificial Analysis」の知能指数でも65で、Gemini 4 Carbonの60、Opus 5.5の59を抜いて歴代1位になった。見せ場の数字もある。約1000台のFable 5.2のエージェントが、フェルマーの最終定理の証明をLeanという言語で書き直す作業を約30時間で終えた。以前の研究モデルでは11日かかっていた。</p>
+  <p>ただし、点数はメーカー自身の数字で、独立した再現はまだない。そして一番高い設定で回すと、1つの仕事あたり約26.50ドルかかる（Opus 5.5の約2.6倍）。値段は「どの強さで回すか」で決まる。Anthropicは「ほとんどの仕事はOpus 5.5のままが起点」と言っている。つまり「一番強い」は、重い仕事だけに使うもの、という位置づけだ。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>Claude Codeを2.1.321以降に上げて、重い仕事を1回だけFable 5.2で回してみる。かかった時間と値段を、Opus 5.5のときと比べる。速いモード（/fast）は、急ぐときだけ使う。</p>
+  </div>
+  <p class="meta">出典：Anthropic「Introducing Claude Fable 5.2 and Claude Mythos 5.2」（11月9日）／まとめ：limitdigest「Claude Fable 5.2 and Mythos 5.2: price, limits, benchmarks」（11月10日更新）／どれくらい確かか：中〜高。値段と仕様はAnthropicの発表と料金表を引いた複数のまとめで一致。点数はメーカー自身の数字で、独立の再現はまだない<br>
+  <a href="https://limitdigest.com/guides/claude-fable-5-2-mythos-5-2/">limitdigest — Claude Fable 5.2 and Mythos 5.2: price, limits, benchmarks</a></p>
+</article>
+
+<article id="f2">
+  <span class="tag">特集 2 ・ マーケティング</span>
+  <h2>ChatGPTから来る人は100人に1人もいない。でも買う確率はGoogleの約5倍</h2>
+  <h3>誰が・何をした</h3>
+  <p>SEOの専門家 Marie Haynes が、100のサイト・1億4500万回の訪問を1年分調べた。ChatGPTから来る人の量と、買う・申し込む確率を、Googleの自然検索と比べた。Search Engine Journal が11月5日に報じ、11月7日に更新した。</p>
+  <p>具体的には、こういう数字だ。量は、ChatGPTがGoogleの自然検索の0.62%。Googleから100人来るところ、ChatGPTからは0.6人ほど。全部のAIを合わせても0.73%にとどまる。ところが買う確率は、ChatGPTから来た人が13.8%、Googleの自然検索から来た人が3.02%。約5倍の差がある。ただし量が違うので、買った人の総数ではGoogleが全体の96.5%を占め、AI全体の27倍になる。</p>
+  <h3>AIから来る人は、増えてはいる</h3>
+  <p>別の調査（SEOcrawl、1万6000超のサイト）では、AIから来る訪問は前年比45%増えた。Google100件に対しAIは1.25件で、1年前は0.7件だった。一方、Googleの自然検索のクリックは前年比15%減った。量はまだ小さいが、伸びているのはAIの側だ。</p>
+  <h3>どう読むか——クリック数だけ見ると、AIの影響は見えない</h3>
+  <p>Search Engine Journal の主張は、こうだ。買う人は、チャットの中で30分かけて商品を比べ、決めてからサイトに来る。だからサイトに来た時点で、もう買う気が高い。決めたあとにブランド名で検索して買うと、分析の上では「Googleから来た買収」として数えられる。つまり、AIの影響は「来た人の数」ではなく「買う確率の高さ」と「決める前の会話」に隠れている。買う判断が起きる場所が、検索結果の画面からチャットの中に移っている、という話だ。</p>
+  <p>ただし、これは「AI対策にお金を回せ」という話ではない。Haynes自身は「量が小さいうちは、AI対策に直接お金をかけるのは早い」と言っている。SEJの記事はその結論に反論している。同じ数字から2つの立場に分かれる、という読み方が要る。数字の出どころは100サイトの実データだが、サイトによって差が大きく、1000人あたり20〜25人来るサイトもある。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（15分）</h3>
+    <p>自分のサイトの分析（GA4）で、ChatGPTから来た人の数と成約率を、Googleの自然検索と並べて1回見る。数が少なくても、成約率が高ければ「来る人は少ないが、来た人は買う気が高い」と分かる。</p>
+  </div>
+  <p class="meta">出典：Search Engine Journal「GEO Isn't A Distraction – AI Influence Doesn't Show Up In Referral Data」（11月5日、11月7日更新）／もとの調査：Marie Haynes（100サイト・1億4500万セッション）／どれくらい確かか：中。100サイトの実データで、別の調査（SEOcrawl、1万6000サイト）も同じ方向。ただし「AI対策に力を入れるべきか」の結論は、同じ数字から2つの立場に分かれる<br>
+  <a href="https://www.searchenginejournal.com/geo-isnt-a-distraction-referral-data-misses-where-ai-shapes-buying-decisions/595730/">searchenginejournal.com — GEO Isn't A Distraction – AI Influence Doesn't Show Up In Referral Data</a></p>
+</article>
+
+<article id="f3">
+  <span class="tag">特集 3 ・ AI</span>
+  <h2>Claude Codeは2.1.321に上げてほしい——別の場所へ鍵が漏れる穴をふさいだ</h2>
+  <h3>誰が・何をした</h3>
+  <p>Claude Code 2.1.321（11月9日）が、外部の手伝い役（MCPサーバー）につなぐときの安全の穴をふさいだ。あわせて、許可のチェックをすり抜ける穴も3つ直した。2.1.322（11月10日）では、GoogleのVertex AIで速いモードが使えるようになった。</p>
+  <p>具体的には、こういう穴だ。MCPサーバーにログインするとき、サーバーが「こっちへ行って」と別の場所を指すと、更新トークン（ログインし直さなくても長く使える鍵）が、その別の場所へ送られてしまうことがあった。更新トークンは長く使える鍵なので、漏れると長く悪用される。2.1.321では、別の場所へ送らないように直した。</p>
+  <h3>別の穴と混同しないこと</h3>
+  <p>11月3日に公開された別の穴（CVE-2026-88968、編集の道具が安全の枠を抜ける問題）は、8月の2.1.251で既に直っている。今回の2.1.321とは別の話なので、混同しないこと。今回の直しにはCVEは付いていない。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（5分）</h3>
+    <p>ターミナルで <code>claude --version</code> と打つ。2.1.321より前なら、更新する。自動で更新される設定の人は、もう入っているはず。MCPサーバーを使っている人は、更新のあと、使っているサーバーのログインを一度見直すと安心。</p>
+  </div>
+  <p class="meta">出典：Claude Code CHANGELOG 2.1.321（11月9日）／まとめ：ctxsec（11月10日）／どれくらい確かか：高。公式の変更履歴を引いたまとめで、バージョン番号と直した内容まで具体的に書かれている<br>
+  <a href="https://ctxsec.com/items/claude-code-2-1-321-mcp-oauth-refresh-token-redirect-leak-sandbox-permission-fixes">ctxsec.com — Claude Code 2.1.321 fixes MCP OAuth sending refresh tokens to another host on redirect</a></p>
+</article>
+
+<section class="notes" id="notes">
+  <h2>小ネタ速報</h2>
+  <ul>
+    <li><b>Metaの小さいモデル「Muse Ember」が出た。</b>Haiku並みの働きを3分の1の値段でこなす、という触れ込み。Muse Codeの中でのコーディングの点数は46で、Claude CodeのHaiku 5.5（37）、CodexのGPT-6 Luna（31）を上回った（11月10日のまとめ記事による）。<br><a href="https://thedailyfledgling.click/">thedailyfledgling.click — The Daily Fledgling, November 10, 2026</a></li>
+    <li><b>OpenAIの「dots」が、複数の自分のパソコンから1台を選べるようになった。</b>専用のマシンで作ってテストし、手元のパソコンではそのまま作業を続けられる（11月10日、OpenAI Developersの発表より）。<br><a href="https://thedailyfledgling.click/">thedailyfledgling.click — The Daily Fledgling, November 10, 2026</a></li>
+    <li><b>Claude Codeの速さを1時間ごとに測った結果、直近24時間は1秒あたり115トークンで、過去7日とほぼ変わらず。</b>速くなっても遅くなってもいない（llmlatency.dev、11月10日）。<br><a href="https://llmlatency.dev/coding-agents">llmlatency.dev — Is Claude Code slower today?</a></li>
+    <li><b>Codexの「28日で届ける」企画が終わり、0.166.0が安定版になった。</b>Stack Overflowの2026年調査では、Claude Codeの利用率65.5%に対しCodexは29.5%。企画はその差への返答だった（11月3日）。<br><a href="https://codex.danielvaughan.com/2026/11/03/agentic-coding-landscape-2026-antigravity-kiro-codex-cli/">codex.danielvaughan.com — The 2026 Agentic Coding Landscape</a></li>
+    <li><b>Googleのコーディングエージェントは「Antigravity」に一本化された。</b>一般向けのGemini CLIは11月1日に終わり、Julesの名前も消えた。無料で使っていた人はAntigravity CLI（agy）に移る形になる（11月3日）。<br><a href="https://codex.danielvaughan.com/2026/11/03/agentic-coding-landscape-2026-antigravity-kiro-codex-cli/">codex.danielvaughan.com — The 2026 Agentic Coding Landscape</a></li>
+  </ul>
+</section>
+
+<section class="notes stock">
+  <h2>試したいストック（今日分）</h2>
+  <ul>
+    <li>Claude Codeを2.1.321以降に上げて、重い仕事を1回だけFable 5.2で回し、時間と値段をOpus 5.5と比べる（特集1）</li>
+    <li>自分のサイトのGA4で、ChatGPTから来た人の数と成約率をGoogleの自然検索と並べて1回見る（特集2）</li>
+    <li>ターミナルで claude --version と打ち、2.1.321より前なら更新する（特集3）</li>
+  </ul>
+</section>
+
+<footer>
+  今日は水曜の通常号。AIは毎日、心理学とマーケティングは隔日で第2特集。明日は木曜で、心理学が第2特集の番。来週の日曜はまた3領域をつなぐ週次統合。
+</footer>
+
+</div>
+<p class="backlink"><a href="../index.html">← タイムライン（ホーム）に戻る</a></p>
+<!-- auto-reload -->
+<script>
+(function(){var t=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){if(Date.now()-t>5*60*1000){location.reload();}t=Date.now();}});window.addEventListener('pageshow',function(e){if(e.persisted){location.reload();}});})();
+</script>
+<!-- menu-script -->
+<script>
+(function(){var b=document.querySelector('.menubtn'),d=document.querySelector('.dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});document.addEventListener('click',function(){d.classList.remove('open');});var r=document.getElementById('menu-reload');if(r){r.addEventListener('click',function(){var u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());});}})();
+</script>
+</body>
+</html>
