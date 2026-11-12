@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>超感ラボ — 2026-11-12 通常号</title>
+<style>
+  :root{--ink:#1a1d21;--sub:#5b6470;--line:#e6e8eb;--accent:#b45309;--bg:#fbfaf8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:clamp(16px,15.5px + 0.21vw,17px);letter-spacing:0.02em}
+  .wrap{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+  .kicker{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  h1{font-size:26px;margin:4px 0 2px;line-height:1.35}
+  .date{color:var(--sub);font-size:13px}
+  .tldr{background:var(--ink);color:#fff;border-radius:10px;padding:16px 18px;margin:20px 0}
+  .tldr h2{font-size:13px;letter-spacing:.15em;margin:0 0 8px;color:#fbbf24}
+  .tldr ol{margin:0;padding-left:20px}
+  .tldr li{margin:6px 0}
+  article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;background:#fef3c7;color:#92400e;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+  article h2{font-size:19px;margin:2px 0 8px;line-height:1.45}
+  article h3{font-size:13px;letter-spacing:.1em;color:var(--accent);margin:14px 0 4px}
+  article p{margin:0} article p+p{margin-top:26px}
+  .try{background:#fffbeb;border:1px dashed #d97706;border-radius:8px;padding:10px 14px;margin-top:10px}
+  .try p{margin:2px 0}
+  .meta{font-size:12.5px;color:var(--sub);margin-top:10px}
+  a{color:#1d4ed8}
+  .notes{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .notes h2{font-size:17px;margin:0 0 8px}
+  .notes li{margin:10px 0}
+  .stock li{margin:6px 0}
+  footer{color:var(--sub);font-size:12.5px;border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+  code{background:#f1f3f5;border-radius:4px;padding:0 5px;font-size:.9em}
+
+  figure.labfig { background-color:#fdfdf4; background-image:linear-gradient(#dde7d8 1px,transparent 1px),linear-gradient(90deg,#dde7d8 1px,transparent 1px); background-size:22px 22px; border:1px solid #cfdcc8; border-radius:8px; padding:14px 12px 10px; margin:14px 0; }
+  figure.labfig figcaption { font-family:'Zen Kurenaido',sans-serif; font-size:15px; color:#40513c; margin-top:8px; }
+  figure.labfig .stamp { display:inline-block; border:2px solid #c0392b; color:#c0392b; border-radius:6px; padding:1px 7px; font-weight:700; transform:rotate(-4deg); font-size:12px; margin-left:8px; font-family:sans-serif; }
+.appbar{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding:6px 0 10px;margin-bottom:16px}.appbar-home{font-weight:700;text-decoration:none;color:var(--ink);white-space:nowrap}.appbar nav{display:flex;gap:8px;flex-wrap:wrap;margin:0}.appbar nav a,.backlink a{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;font-size:14px;text-decoration:none;color:var(--ink)}.backlink{margin:30px 0 10px}
+/* news-theme (2026-11-07) */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:#14161a;display:flex;flex-direction:column;align-items:stretch;padding:0;border-bottom:3px solid #b45309}
+.topbar .brand{color:#fff;font-weight:700;font-size:17px;letter-spacing:.08em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;height:52px;padding:0 14px}
+.topbar .brand span{color:#fbbf24}
+.topbar nav{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;white-space:nowrap;margin:0;padding:8px 12px;background:#fbfaf8;scrollbar-width:none}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{border:1px solid #e6e8eb;background:#fff;border-radius:999px;padding:4px 14px;font-size:14px;line-height:1.5;text-decoration:none;color:#1a1d21}
+body{padding-top:102px}
+h1{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;font-size:29px}
+article h2,.card h2,.notes h2{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif}
+article{border-radius:4px}
+article h2{font-size:21px}
+.card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
+.appbar{display:none}
+.topbar .brandrow{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 8px 0 14px}
+.topbar .brand{height:auto;padding:0}
+.menubtn{background:transparent;border:1px solid #3a3f46;color:#fff;border-radius:6px;font-size:14px;padding:6px 14px;cursor:pointer;font-family:inherit}
+.dropdown{position:fixed;top:108px;right:10px;z-index:70;background:#fff;border:1px solid #e6e8eb;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.20);padding:6px;min-width:190px;display:none}
+.dropdown.open{display:block}
+.dropdown button,.dropdown a{display:block;width:100%;text-align:left;background:none;border:none;padding:11px 12px;font-size:15px;color:#1a1d21;text-decoration:none;cursor:pointer;font-family:inherit;box-sizing:border-box}
+.issue-list{margin:10px 0 2px;padding-left:20px}
+.issue-list li{margin:7px 0}
+article[id],section[id]{scroll-margin-top:112px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#263026">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="超感ラボ">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<div class="topbar"><div class="brandrow"><a class="brand" href="../index.html">超感<span>ラボ</span></a><button class="menubtn" type="button">メニュー</button></div><nav><a href="../index.html">ホーム</a><a href="../category/ai.html">AI</a><a href="../category/psychology.html">心理学</a><a href="../category/marketing.html">マーケティング</a><a href="../archive.html">アーカイブ</a><a href="../stock.html">ストック</a><a href="../memo.html">メモ</a></nav></div>
+<div class="dropdown"><button id="menu-reload" type="button">↻ 更新する（最新を読み直す）</button><a href="../index.html">ホーム（タイムライン）</a><a href="../archive.html">アーカイブ</a><a href="../memo.html">メモを開く</a></div>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI × 心理学</div>
+  <h1>「GPT-6.2が出る」は、まだ誰も言っていない——Codexの利用枠だけがリセットされた</h1>
+  <div class="date">2026年11月12日（木）｜通常号｜直近約36時間の公開情報から</div>
+</header>
+
+<section class="tldr">
+  <h2>今日のポイント — この3つだけ読めば号全体の地図がつかめる</h2>
+  <ol>
+    <li><b>Codexの利用枠が11月11日にリセットされた。</b>OpenAIの担当者は「木曜はCodexっぽい。貯めておいたリセットを使うのもいい」とだけ言い、「GPT-6.2」という名前は出していない。噂は4分後の引用ポストから広がった。公式のモデル一覧にも6.2はない。</li>
+    <li><b>嫌な出来事を思い出したあと、数字を見分けるような別の作業に5分集中すると、嫌な気分は和らぐ。</b>東京大学の61人の実験で確かめられた。ただし、落ち込みの症状が強い人にはこの手が効きにくかった。</li>
+    <li><b>OpenAIの開発者が、Codexの新しい使い方を3つ見せた。</b>声で指示を出す、途中の作業をクラウドに渡す、個人の手伝い役（dots）にSlackの受け皿を任せる。どれも「手元の画面から離れて、別の場所で進めてもらう」使い方だ。</li>
+  </ol>
+  <p style="font-size:12.5px;color:#d6d3cd;margin:10px 0 0">書き方のルール：専門用語は最初に出たところで普通の言葉で言い直す。読んだだけで場面と意味が浮かぶ文で書く。</p>
+</section>
+
+<article id="f1">
+  <span class="tag">特集 1 ・ AI</span>
+  <h2>「GPT-6.2が出る」は、まだ誰も言っていない——リセットされたのはCodexの利用枠だけ</h2>
+  <h3>誰が・何をした</h3>
+  <p>OpenAIのCodexとChatGPTの製品責任者、Tibo Sottiauxが11月11日の朝（UTC 06:57）、Xに11語だけ投稿した。「Thursday is feeling codexy to me. Perhaps also a good time for a banked reset.」——「木曜はCodexっぽい。貯めておいたリセットを使うのもいい頃合いかも」。そして同じ日の10:47 UTC、こう続けた。「We have reset usage limits for all Codex and ChatGPT Work users, enjoy」——「CodexとChatGPT Workの利用枠をリセットしたよ」。利用枠のリセットは、本当に起きた。</p>
+  <p>具体的には、こういう仕組みだ。「banked reset」（貯めておいたリセット）とは、ためておいた1回分の利用枠の回復券のこと。5時間と1週間の利用枠を1回だけ回復させる。買うものではなく、配られるものだ。利用枠のリセットを追っているトラッカー（codexreset.today）の数では、今年の全体リセットは61回、最後は10月28日で、14日ぶり。およそ4.3日に1回のペースなので、14日の間隔は今年いちばん長い空白だった。</p>
+  <h3>噂は、4分後の引用ポストから生まれた</h3>
+  <p>Tiboの投稿の4分後、フォロワーの多いアカウントがこう引用した。「木曜がついに大きな日らしい。貯めておいたリセットの準備を。大きな船、つまりGPT-6.2が来る」。ここで初めて「GPT-6.2」という名前が出た。だが、Tiboの投稿そのものに「GPT-6.2」の文字はない。OpenAIのモデル一覧にも、APIの変更履歴にも、ニュースルームにも、6.2はない（11月11日夜の確認）。残っている手がかりは1件だけ。10月末、Codexの画面では「GPT-6 Astra」と表示されたのに、請求の中身が <code>gpt-6.2-astra</code> と刻まれていた、というものだ。名前の文字列はあるが、値段も、覚えられる量も、点数も出ていない。</p>
+  <h3>どう読むか——「リセットが来た」は確か、「モデルが来る」はまだ誰も言っていない</h3>
+  <p>リセットが「新しいモデルが出る合図」として使われた前例はある。9月にはGPT-6 Astraが出たあと、使い切った人の枠を戻した。だがそのときは、モデルが出たあとの話だった。今回は順番が逆で、モデルはまだどこにもない。「リセットが来た」は確かで、「モデルが来る」はまだ誰も言っていない、と分けて読むのが正しい。確かめる場所も決まっている。Xの投稿ではなく、OpenAIのモデル一覧だ。そこに名前と値段が載った日が、モデルの出た日になる。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（5分）</h3>
+    <p>Codexの利用枠の画面を開いて、残り枠を1回見る。温存していた重い仕事（大きな書き直しや長い調査）があれば、枠が戻った今日のうちに回す。新モデル待ちで計画を止めない。</p>
+  </div>
+  <p class="meta">出典：Tibo SottiauxのX投稿（11月11日）／検証記事 orcarouter.ai「GPT-6.2 on Thursday? A Banked Reset, Not a Release」（11月11日）／トラッカー codexreset.today／どれくらい確かか：リセット自体は高（担当者本人の投稿）。「GPT-6.2が11月12日に出る」は低（公式の記録に何もない。手がかりは請求画面の文字列1件だけ）<br>
+  <a href="https://www.orcarouter.ai/blog/gpt-6-2-thursday-banked-reset-leak">orcarouter.ai — GPT-6.2 on Thursday? A Banked Reset, Not a Release</a></p>
+</article>
+
+<article id="f2">
+  <span class="tag">特集 2 ・ 心理学</span>
+  <h2>嫌なことを思い出したら、気をそらす——5分の別の作業で気分は和らぐ。ただし落ち込みが強いときは別</h2>
+  <h3>誰が・何をした</h3>
+  <p>東京大学の研究チームが、大学生61人（平均19歳）に、日常の嫌な人間関係の出来事を思い出してもらった。そのあと、数字を見分ける作業に集中してもらう。画面に出る数字を見て、特定の数字のときだけボタンを押さない、という課題だ（SARTという名前の、注意を測るための課題）。思い出す前・直後・作業のあとで気分を測った。論文はFrontiers in Psychology、11月9日公開。</p>
+  <p>具体的には、こういう結果だ。気をそらす作業のあと、嫌な気分はほとんどの人で和らいだ。ただし、落ち込みの症状が強いグループだけは、作業のあとも嫌な気分が残り、他のグループよりはっきり高かった。頭の働きを測る装置（近赤外線で血の流れを見る）でも、このグループは左の前頭の働きが弱めに出た。ただしこの装置の差は、厳しい統計の直しをすると消えるので、弱い手がかりとして扱う。</p>
+  <h3>どう読むか——「気をそらす」は忘れることではなく、注意を移すこと</h3>
+  <p>「気をそらす」は、日常でよく使う手（散歩・映画・読書）と同じ仕組みで、ここでは数字を見分けるような「少し頭を使う作業」でも効いた。ポイントは2つ。1つは、気をそらす作業は「嫌なことを忘れる」のではなく「注意を別のところへ移す」ことで、気分が和らぐということ。もう1つは、落ち込みが強いときはこの手が効きにくいので、「気分転換すればいいのに」と自分を責めないこと。効かないのはやり方のせいではなく、状態のせいかもしれない。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（5分）</h3>
+    <p>嫌な場面を思い出してモヤモヤしたら、5分だけ別の集中作業に切り替える。数字を数える、片付けをする、タイピングをする——「少し頭を使うが、嫌なことと関係ない」作業がいい。5分たっても気分が戻らなければ、無理に気をそらさず、休む・寝る・誰かに話す、に切り替える。</p>
+  </div>
+  <p class="meta">出典：Ozawa et al. (2026) Frontiers in Psychology 17:1946176（11月9日）／どれくらい確かか：中。61人の査読つき論文だが、大学生だけの結果で、落ち込みの強いグループの差は人数が少なく、装置の差は統計の直しで消えた。日常への当てはめは「試してみる」段階<br>
+  <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1946176/full">frontiersin.org — Stress responses and emotion regulation through distraction in non-clinical students</a></p>
+</article>
+
+<article id="f3">
+  <span class="tag">特集 3 ・ AI</span>
+  <h2>Codexに声で頼む、クラウドに渡す——OpenAIの開発者が見せた3つの新しい働き方</h2>
+  <h3>誰が・何をした</h3>
+  <p>11月11日、AI Engineer Code Summitの初日。OpenAIの開発者体験チームのDominik KundelとCharlie Guoが「Codexの新しい働き方」のワークショップを開いた。Latent Spaceが取材した。</p>
+  <p>具体的には、3つの使い方だ。1つ目は、声で指示を出す。Guoは声を「1つの作業の指示」ではなく「全体を動かす操作盤」として使う。声で「この作業の進み具合は？」「別のアプリから数字を取ってきて」と、複数の作業をまたいで指示する。Kundelは車で移動中に個人の手伝い役（dots）に声で話しかけ、着く頃には変更の提案（プルリクエスト）ができている、という使い方をしている。</p>
+  <p>2つ目は、途中の作業をクラウドに渡す。9月末に出たCodex Cloudの新しい版では、作業の土台（環境）を1回だけ公開しておけば、複数の仕事をその土台の別々のコピーで回せる。手元のCodexに「この作業をクラウドで回して」と頼むと、クラウド側で続きが進む。Kundelいわく、クラウドは「別の場所で動く実行役」でしかない、という位置づけになった。</p>
+  <p>3つ目は、dotsを3つの役に使う。Guoは、見落としを教えてくれる「安全網」、Slackで頼みごとを受ける「受け皿」、どこにでもいる「常駐の手伝い役」の3つに分けて使っている。Kundelは、dotsが自分の仕事の文脈をすでに持っているので、Codex本体に頼むよりdotsから始めることが多い、と言っている。</p>
+  <h3>どう読むか——3つに共通するのは「手元の画面から離れる」こと</h3>
+  <p>声は「手を止めずに指示を出す」ためのもの、クラウドは「パソコンを閉じても進む」ためのもの、dotsは「自分が席にいなくても文脈を持って動く」ためのもの。どれも「手元の画面の前で待つ時間」を減らす使い方だ。Kundelの締めの助言は「やり方に固執しないこと。やり方はどんどん変わる」。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（10分）</h3>
+    <p>次にCodexへ頼むとき、1回だけ声で指示してみる。または、手元の作業を「クラウドで続けて」と渡してみる。どちらも、画面の前で待つ時間を減らすための一手。</p>
+  </div>
+  <p class="meta">出典：Latent Space「AI Engineer Code Summit: OpenAI on New Ways of Working With Codex」（11月11日）／どれくらい確かか：中。OpenAIの開発者本人の発言を取材した記事だが、デモの話が中心で、声やdotsの効果を測った数字はない<br>
+  <a href="http://latent.space/p/codex-work/">latent.space — AI Engineer Code Summit: OpenAI on New Ways of Working With Codex</a></p>
+</article>
+
+<section class="notes" id="notes">
+  <h2>小ネタ速報</h2>
+  <ul>
+    <li><b>Claudeに「Whiteboards」と「Sheets」が出た。</b>散らかった計画を話すと、みんなで直せるボードに並べてくれる。表や予算を頼むと、そのまま育てられる表計算シートになる。有料プランのベータ。データのダッシュボード（Claude Data）は正式版になった（11月11日、Anthropicの発表より）。<br><a href="https://thedailyfledgling.click/">thedailyfledgling.click — The Daily Fledgling, November 11, 2026</a></li>
+    <li><b>Claudeの有料プラン全員に、利用枠の全回復が1回だけ無料でもらえる。</b>12月10日まで。設定の「Usage」から使える。Fableの登場で枠を使い切った人への対応で、Pro・Max・Ultra・Teamの全員が対象（11月11日、ClaudeDevsの発表より）。<br><a href="https://thedailyfledgling.click/">thedailyfledgling.click — The Daily Fledgling, November 11, 2026</a></li>
+    <li><b>Gemini 4 Carbonが11月10日に一般公開された。</b>モデル名は <code>gemini-4-carbon</code>。値段は100万トークンあたり入力2ドル・出力10ドルで、11月30日まで。12月1日からは4ドル・20ドルに上がる。GitHub CopilotでもPro+以上のプランで使えるようになった（Googleの変更履歴とGitHubの変更履歴より）。<br><a href="https://blog.laozhang.ai/en/posts/gemini-4-carbon-release-date">blog.laozhang.ai — Gemini 4 Carbon Release Date: Out Nov 10 on Paid API and Ultra</a></li>
+    <li><b>Antigravityに「/swarm」が出た。</b>1つの頼み文が、計画・作成・点検の担当に分かれたエージェントのチームになる。共有の掲示板で進み、役割ごとに別のモデルも使える。デモでは、作ったゲームの絵を自分で見直して直すところまで回っていた（11月11日、Googleの発表より）。<br><a href="https://thedailyfledgling.click/">thedailyfledgling.click — The Daily Fledgling, November 11, 2026</a></li>
+    <li><b>作業記憶の大きい人ほど、未知の選択肢を意識的に試す。</b>52人の実験で、作業記憶の大きい人は「まだ試していない選択肢」を選ぶ回数が多く、知っている選択肢で稼ぐ回数は少なかった（11月8日、bioRxivのpreprint）。<br><a href="https://www.biorxiv.org/content/10.64898/2026.11.08.765180v1">biorxiv.org — Working memory capacity is linked to directed exploration</a></li>
+  </ul>
+</section>
+
+<section class="notes stock">
+  <h2>試したいストック（今日分）</h2>
+  <ul>
+    <li>Codexの利用枠の画面を開いて残り枠を見る。温存していた重い仕事があれば、枠が戻った今日のうちに回す（特集1）</li>
+    <li>嫌な場面を思い出してモヤモヤしたら、5分だけ別の集中作業（数字を数える・片付け・タイピング）に切り替える（特集2）</li>
+    <li>次にCodexへ頼むとき、1回だけ声で指示してみる。または手元の作業を「クラウドで続けて」と渡してみる（特集3）</li>
+  </ul>
+</section>
+
+<footer>
+  今日は木曜の通常号。AIは毎日、心理学とマーケティングは隔日で第2特集。明日は金曜で、マーケティングが第2特集の番。来週の日曜はまた3領域をつなぐ週次統合。
+</footer>
+
+</div>
+
+<p class="backlink"><a href="../index.html">← タイムライン（ホーム）に戻る</a></p>
+<!-- auto-reload -->
+<script>
+(function(){var t=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){if(Date.now()-t>5*60*1000){location.reload();}t=Date.now();}});window.addEventListener('pageshow',function(e){if(e.persisted){location.reload();}});})();
+</script>
+<!-- menu-script -->
+<script>
+(function(){var b=document.querySelector('.menubtn'),d=document.querySelector('.dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});document.addEventListener('click',function(){d.classList.remove('open');});var r=document.getElementById('menu-reload');if(r){r.addEventListener('click',function(){var u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());});}})();
+</script>
+</body>
+</html>
