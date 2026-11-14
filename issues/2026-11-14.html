@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>超感ラボ — 2026-11-14 通常号</title>
+<style>
+  :root{--ink:#1a1d21;--sub:#5b6470;--line:#e6e8eb;--accent:#b45309;--bg:#fbfaf8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:clamp(16px,15.5px + 0.21vw,17px);letter-spacing:0.02em}
+  .wrap{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+  .kicker{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  h1{font-size:26px;margin:4px 0 2px;line-height:1.35}
+  .date{color:var(--sub);font-size:13px}
+  .tldr{background:var(--ink);color:#fff;border-radius:10px;padding:16px 18px;margin:20px 0}
+  .tldr h2{font-size:13px;letter-spacing:.15em;margin:0 0 8px;color:#fbbf24}
+  .tldr ol{margin:0;padding-left:20px}
+  .tldr li{margin:6px 0}
+  article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;background:#fef3c7;color:#92400e;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+  article h2{font-size:19px;margin:2px 0 8px;line-height:1.45}
+  article h3{font-size:13px;letter-spacing:.1em;color:var(--accent);margin:14px 0 4px}
+  article p{margin:0} article p+p{margin-top:26px}
+  .try{background:#fffbeb;border:1px dashed #d97706;border-radius:8px;padding:10px 14px;margin-top:10px}
+  .try p{margin:2px 0}
+  .meta{font-size:12.5px;color:var(--sub);margin-top:10px}
+  a{color:#1d4ed8}
+  .notes{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+  .notes h2{font-size:17px;margin:0 0 8px}
+  .notes li{margin:10px 0}
+  .stock li{margin:6px 0}
+  footer{color:var(--sub);font-size:12.5px;border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+  code{background:#f1f3f5;border-radius:4px;padding:0 5px;font-size:.9em}
+
+  figure.labfig { background-color:#fdfdf4; background-image:linear-gradient(#dde7d8 1px,transparent 1px),linear-gradient(90deg,#dde7d8 1px,transparent 1px); background-size:22px 22px; border:1px solid #cfdcc8; border-radius:8px; padding:14px 12px 10px; margin:14px 0; }
+  figure.labfig figcaption { font-family:'Zen Kurenaido',sans-serif; font-size:15px; color:#40513c; margin-top:8px; }
+  figure.labfig .stamp { display:inline-block; border:2px solid #c0392b; color:#c0392b; border-radius:6px; padding:1px 7px; font-weight:700; transform:rotate(-4deg); font-size:12px; margin-left:8px; font-family:sans-serif; }
+.appbar{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding:6px 0 10px;margin-bottom:16px}.appbar-home{font-weight:700;text-decoration:none;color:var(--ink);white-space:nowrap}.appbar nav{display:flex;gap:8px;flex-wrap:wrap;margin:0}.appbar nav a,.backlink a{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;font-size:14px;text-decoration:none;color:var(--ink)}.backlink{margin:30px 0 10px}
+/* news-theme (2026-11-07) */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:#14161a;display:flex;flex-direction:column;align-items:stretch;padding:0;border-bottom:3px solid #b45309}
+.topbar .brand{color:#fff;font-weight:700;font-size:17px;letter-spacing:.08em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;height:52px;padding:0 14px}
+.topbar .brand span{color:#fbbf24}
+.topbar nav{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;white-space:nowrap;margin:0;padding:8px 12px;background:#fbfaf8;scrollbar-width:none}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{border:1px solid #e6e8eb;background:#fff;border-radius:999px;padding:4px 14px;font-size:14px;line-height:1.5;text-decoration:none;color:#1a1d21}
+body{padding-top:102px}
+h1{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;font-size:29px}
+article h2,.card h2,.notes h2{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif}
+article{border-radius:4px}
+article h2{font-size:21px}
+.card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
+.appbar{display:none}
+.topbar .brandrow{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 8px 0 14px}
+.topbar .brand{height:auto;padding:0}
+.menubtn{background:transparent;border:1px solid #3a3f46;color:#fff;border-radius:6px;font-size:14px;padding:6px 14px;cursor:pointer;font-family:inherit}
+.dropdown{position:fixed;top:108px;right:10px;z-index:70;background:#fff;border:1px solid #e6e8eb;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.20);padding:6px;min-width:190px;display:none}
+.dropdown.open{display:block}
+.dropdown button,.dropdown a{display:block;width:100%;text-align:left;background:none;border:none;padding:11px 12px;font-size:15px;color:#1a1d21;text-decoration:none;cursor:pointer;font-family:inherit;box-sizing:border-box}
+.issue-list{margin:10px 0 2px;padding-left:20px}
+.issue-list li{margin:7px 0}
+article[id],section[id]{scroll-margin-top:112px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#263026">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="超感ラボ">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<div class="topbar"><div class="brandrow"><a class="brand" href="../index.html">超感<span>ラボ</span></a><button class="menubtn" type="button">メニュー</button></div><nav><a href="../index.html">ホーム</a><a href="../category/ai.html">AI</a><a href="../category/psychology.html">心理学</a><a href="../category/marketing.html">マーケティング</a><a href="../archive.html">アーカイブ</a><a href="../stock.html">ストック</a><a href="../memo.html">メモ</a></nav></div>
+<div class="dropdown"><button id="menu-reload" type="button">↻ 更新する（最新を読み直す）</button><a href="../index.html">ホーム（タイムライン）</a><a href="../archive.html">アーカイブ</a><a href="../memo.html">メモを開く</a></div>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI × 心理学</div>
+  <h1>Claude Codeの勝ちは誤差の範囲内——請求額だけCodexの7.4倍</h1>
+  <div class="date">2026年11月14日（土）｜通常号｜直近約36時間の公開情報から</div>
+</header>
+
+<section class="tldr">
+  <h2>今日のポイント — この3つだけ読めば号全体の地図がつかめる</h2>
+  <ol>
+    <li><b>コードを書く腕試し330問で、Claude Codeは217問、Codexは201問正解した。</b>差は16問だが、誤差の幅を入れると両方の範囲は重なる。勝ち負けより確かなのは請求額の差で、同じ330問でClaude Codeは約4,719ドル、Codexは約634ドル。1問解くのにかかったお金は21.74ドルと3.16ドルで、約7倍違う。</li>
+    <li><b>覚えた絵を頭の中で保つあいだ、目は「覚えたときと同じ動き」をなぞっていた。</b>目が見たものの細かい違いまで運んでいて、見た目の細かさが大事な課題ほど、目の動きの読み取りがはっきりした。思い出すときは、覚えたときと同じ場所に目をやると、頭の中の絵が保ちやすい。</li>
+    <li><b>AIの作業手順を25個と命令を9個にまとめた「agent-skills」が、11万7千スターを集めた。</b>仕様→計画→作成→テスト→見直し→公開の流れを、「テストを証拠にすること」や「一度に1つの仕事だけ進めること」といった、通らないと先へ進めない関門で縛る。AIが書く速さに、人の点検が追いつかないチーム向けの仕組みだ。</li>
+  </ol>
+  <p style="font-size:12.5px;color:#d6d3cd;margin:10px 0 0">書き方のルール：専門用語は最初に出たところで普通の言葉で言い直す。読んだだけで場面と意味が浮かぶ文で書く。</p>
+</section>
+
+<article id="f1">
+  <span class="tag">特集 1 ・ AI</span>
+  <h2>Claude Codeの勝ちは誤差の範囲内——請求額だけCodexの7.4倍</h2>
+  <h3>誰が・何をした</h3>
+  <p>AIにコードを書かせる道具の腕試し（Terminal-Bench 4.1）で、11月13日に読み直された公式の記録によると、330問のうちClaude Code（Opus 5.5、最大の力で動かした場合）は217問、Codex（GPT-6.1 Sol、同じく最大）は201問を解いた。正解率は65.76%と60.91%で、差は約5ポイントだ。</p>
+  <p>具体的には、こういう数字だ。Claude Codeの正解率には±3.11ポイント、Codexには±2.97ポイントの誤差の幅がある。Claude Codeの幅の下端（62.65%）とCodexの幅の上端（63.88%）を比べると、両方の範囲は重なる。つまり「Claude Codeのほうが強い」とは、この記録だけでは言い切れない。一方で、同じ330問にかかった請求額はClaude Codeが4,718.65ドル、Codexが634.24ドルで、約7.4倍の開きがある。1問解くのにかかったお金に直すと、Claude Codeは21.74ドル、Codexは3.16ドルだ。</p>
+  <h3>どう読むか——「何点取れたか」と「1問いくらか」は別々に見る</h3>
+  <p>11月10日号では「1つの仕事にClaudeは11.42ドル・1時間、Codexは7.04ドル・25分」と書いたが、今回の読み直しはその続きだ。点数の差は誤差の範囲内に消えるのに、請求額の差は消えない。道具を選ぶときの物差しは、ここから1つ決まる。「何点か」だけ見て選ぶと、誤差の中の差に高いお金を払うことになる。まず「1問（1つの仕事）いくらか」で比べ、そのうえで「自分の仕事の種類で、点数の差が誤差より大きいか」を確かめることだ。</p>
+  <p>もう1つ、よく引用される別の腕試し（SWE-bench Verified）の記録は、11月13日時点で2月26日以降まったく更新されていない。180件の記録が260日も前のままだ。古い記録を今の道具選びに使うのは危うい。新しい記録のあるTerminal-Bench側で、道具の名前と誤差の幅をセットで見るのが安全だ。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（10分）</h3>
+    <p>自分の仕事を10件だけ、Claude CodeとCodexの両方に同じ頼み方でやらせ、「解けた数」と「かかったお金」を並べる。点数の差が小さく、お金の差が大きいなら、安いほうを日常の道具にする。</p>
+  </div>
+  <p class="meta">出典：Medium「Claude Code's Terminal-Bench Lead Costs 7.4x What Codex Pays. The Error Bars Overlap.」（Sarathc、公式の腕試し記録と値段表を11月13日に読み直したもの）／どれくらい確かか：中。数字は公式の記録から写したものだが、まとめ直したのは個人の記事で、査読はない。請求額は腕試し330問分の領収書で、自分の月額料金とは別物<br>
+  <a href="https://medium.com/@sarathc225/claude-codes-terminal-bench-lead-costs-7-4x-what-codex-pays-the-error-bars-overlap-nov-2026-0e0d31dbfda2">medium.com — Claude Code's Terminal-Bench Lead Costs 7.4x What Codex Pays. The Error Bars Overlap. (Nov 2026)</a></p>
+</article>
+
+<article id="f2">
+  <span class="tag">特集 2 ・ 心理学</span>
+  <h2>覚えた絵を思い出すとき、目は覚えたときと同じ道をたどる</h2>
+  <h3>誰が・何をした</h3>
+  <p>Journal of Neuroscienceに11月6日に出た論文。研究チームは、人の目がどう動くかを測りながら、自然の風景写真を頭の中で保たせる実験を2回やった。写真を見ているときの目の動き（どこをどの順番で見たか）と、写真が消えたあと頭の中で保っているあいだの目の動きを比べた。次に何を聞かれるか（見た目の細かさか、写真の意味か）も変えてある。</p>
+  <p>具体的には、こういう結果だ。写真が消えたあとも、目は写真を見ていたときと同じ順番・同じ場所をなぞるように動いた。目の動きだけから、頭の中に保っているのがどの写真か読み取れるほど、細かい違いが目に表れていた。見た目の細かさが大事な課題では、目の動きの読み取りがよりはっきりした。答えを聞かれる直前には、目の動きの読み取りがさらに強くなった。つまり目は、頭の中の絵をただ映すだけでなく、次に何を聞かれるかに合わせて動きを変えていた。</p>
+  <figure class="labfig" id="fig-gaze">
+<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-d2-version="v0.9.0" preserveAspectRatio="xMinYMin meet" viewBox="0 0 466 792" style="width:100%;height:auto;display:block"><svg class="d2-273726095 d2-svg" width="466" height="792" viewBox="-101 -101 466 792"><rect x="-101" y="-101" width="466" height="792" rx="0" fill="none" class=" fill-N7" stroke-width="0" /><style type="text/css"><![CDATA[
+.d2-273726095 .text-bold {
+	font-family: "d2-273726095-font-bold";
+}
+@font-face {
+	font-family: d2-273726095-font-bold;
+	src: url("data:application/font-woff;base64,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");
+}
+.sketch-overlay-bright {
+	fill: url(#streaks-bright-d2-273726095);
+	mix-blend-mode: darken;
+}]]></style><style type="text/css"><![CDATA[.shape {
+  shape-rendering: geometricPrecision;
+  stroke-linejoin: round;
+}
+.connection {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.blend {
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+		.d2-273726095 .fill-N1{fill:#0A0F25;}
+		.d2-273726095 .fill-N7{fill:#FFFFFF;}
+		.d2-273726095 .fill-B1{fill:#0D32B2;}
+		.d2-273726095 .fill-B6{fill:#F7F8FE;}
+		.d2-273726095 .stroke-B1{stroke:#0D32B2;}
+		.d2-273726095 .stroke-B2{stroke:#0D32B2;}.appendix text.text{fill:#0A0F25}.md{--color-fg-default:#0A0F25;--color-fg-muted:#676C7E;--color-fg-subtle:#9499AB;--color-canvas-default:#FFFFFF;--color-canvas-subtle:#EEF1F8;--color-border-default:#0D32B2;--color-border-muted:#0D32B2;--color-neutral-muted:#EEF1F8;--color-accent-fg:#0D32B2;--color-accent-emphasis:#0D32B2;--color-attention-subtle:#676C7E;--color-danger-fg:red;}.sketch-overlay-B6{fill:url(#streaks-bright-d2-273726095);mix-blend-mode:darken}.light-code{display: block}.dark-code{display: none}]]></style><defs><pattern id="streaks-bright-d2-273726095" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+    <path fill="rgba(0, 0, 0, 0.1)" fill-rule="evenodd" clip-rule="evenodd" d="M58.1193 0H58.1703L55.4939 2.67644L58.1193 0ZM45.7725 0H45.811L41.2851 4.61498L42.7191 3.29325L37.0824 8.92997L35.0554 10.9569L32.0719 13.9404L29.6229 16.5017L27.1738 19.0631L25.8089 20.2034L23.2195 22.6244L18.181 27.6068L23.8178 21.97L27.0615 18.9508L33.8666 11.9773L33.1562 12.5194L37.0262 8.87383L40.784 5.11602L38.0299 7.64561L45.7725 0ZM23.1079 0H23.108L21.5814 1.66688L20.3126 2.79534L23.1079 0ZM7.53869 0H7.54254L7.50005 0.035944L7.53869 0ZM2.49995 0H2.52362L0.900245 1.59971L2.49995 0ZM0 3.64398V3.60744L0.278386 3.36559L0 3.64398ZM0 18.6564V18.5398L0.67985 17.8416L3.4459 15.0755L1.15701 17.1333L2.78713 15.6022L6.01437 12.507L8.5168 9.87253L5.15803 13.2313L11.0357 7.25453L10.4926 7.89678L13.6868 4.7686L8.54982 9.90555L7.05177 11.5687L4.68087 13.9396L0.729379 17.8911L3.01827 15.8333L0 18.6564ZM0 69.2431V69.178L1.64651 67.4763L1.46347 67.7796L5.84063 63.4025L4.42167 64.9016L0 69.4007V69.3408L0.247596 68.9955L0 69.2431ZM2.51594 100H2.49238L5.19989 97.2925L7.70071 95.0162L12.8713 89.6772L12.3094 90.0707L15.288 87.3167L18.1542 84.4504L16.0269 86.3532L22.8752 79.6172L18.5364 84.0683L19.6435 83.0734L15.3441 87.3728L13.798 88.9189L11.5224 91.1945L9.66768 93.1615L7.81297 95.1285L6.74529 95.9716L4.75024 97.7983L2.51594 100ZM7.54255 100H7.5387L9.81396 97.884L8.46606 99.2189L7.54255 100ZM45.8189 100H45.7807L46.9912 98.8047L45.8189 100ZM58.1784 100H58.1272L62.2952 95.7511L66.1408 91.9055L63.0037 94.8115L65.2507 92.6635L69.7117 88.3346L73.2165 84.6977L68.5469 89.3673L76.7379 81.0773L75.9634 81.9509L80.3913 77.5889L73.2496 84.7307L71.1346 87.0107L67.8384 90.3069L62.3447 95.8006L65.4818 92.8947L61.2625 96.9159L58.1784 100ZM75.4277 100H75.229L82.1834 92.9039L81.3403 93.5787L86.0063 89.1371L90.5601 84.5833L87.2464 87.6725L98.0937 76.9375L91.1673 83.9761L92.8932 82.3625L86.0625 89.1933L83.6062 91.6496L79.9907 95.265L77.011 98.357L75.4277 100ZM100 18.5398V18.6563L99.9556 18.6979L95.8065 22.847L100 18.5398ZM100 3.60743V3.64398L99.6791 3.9649L99.2094 4.29428L100 3.60743ZM75.4201 0L74.0312 1.4412L72.401 2.84687L69.281 5.79854L63.1812 11.8422L70.0119 5.01151L73.919 1.32893L75.2214 0H75.4201ZM100 69.1858V69.2509L98.059 71.1919L100 69.1858ZM100 69.3486V69.4085L99.8414 69.5698L100 69.3486ZM41.9398 28.8254L53.6223 16.993L52.5215 18.2437L54.7428 16.0575L54.6875 16.0759L54.8008 16.0004L58.842 12.0231L54.9925 15.8726L55.1085 15.7953L54.898 16.0058L54.84 16.0251L48.6523 22.2128L45.6419 25.473L40.9389 30.1759L33.1007 38.0142L37.5866 33.878L31.558 39.6068L23.3278 47.837L33.0257 37.9393L38.5125 32.4525L34.0266 36.5887L37.2369 33.5283L43.6074 27.3576L48.6023 22.1628L41.9398 28.8254ZM41.0977 17.0531L39.718 18.2925L40.312 17.8388L41.0977 17.0531ZM36.875 20.3106L48.1601 7.88137L42.3438 13.7478L36.875 20.3106ZM35.7125 25.8109L34.3328 27.0503L34.9268 26.5966L35.7125 25.8109ZM17.7022 39.7534L19.0819 38.514L18.8092 38.7867L36.7575 21.8045L23.1569 35.3051L13.5771 43.7372L18.1448 39.4154L17.7022 39.7534ZM3.48102 28.9281L1.53562 30.8735L1.22228 31.0465L0.0765686 32.3326L1.60579 30.9437L2.57849 29.971L3.48102 28.9281ZM0.953463 26.2027L19.5702 7.58594L9.31575 18.6078L0.953463 26.2027ZM23.7175 12.11L17.9339 18.0875L21.4622 14.5592L20.8074 15.4725L28.1915 7.95918L30.4791 5.54232L23.4224 12.599L23.7175 12.11ZM43.4641 43.1538L40.7872 46.1552L42.4907 44.4517L42.3285 45.0465L45.8166 41.3421L46.8441 40.0983L43.4371 43.5053L43.4641 43.1538ZM1.32715 48.3271L8.0918 41.5625L4.3657 45.5674L1.32715 48.3271ZM11.1479 31.2556L11.5689 30.975L11.3584 31.1855L11.1479 31.2556ZM11.9898 27.4667L12.2003 27.2562L11.7793 27.5369L11.9898 27.4667ZM11.3585 34.5531L11.148 34.7636L10.9375 34.8338L11.3585 34.5531ZM72.929 28.5457L82.2965 19.0792L81.4043 20.0705L86.4597 15.0811L78.2983 23.2425L75.8697 25.8362L72.1029 29.603L65.8249 35.881L69.3934 32.5437L64.5858 37.1531L57.994 43.745L65.7754 35.8314L70.17 31.4369L66.6015 34.7742L69.1623 32.3125L74.2507 27.3562L78.2653 23.2095L72.929 28.5457ZM82.6674 1.83549L84.3245 0.31872L83.3724 1.27088L82.6674 1.83549ZM64.5872 16.1312L62.9301 17.648L63.6351 17.0834L64.5872 16.1312ZM70.868 9.85044L80.0048 1.1214L74.6221 6.47142L70.868 9.85044ZM90.2409 41.9448L70.7578 61.4279L79.5093 53.4795L90.2409 41.9448ZM91.8088 42.5434L95.3963 38.8357L95.2132 39.139L99.5904 34.7618L98.1714 36.261L93.5912 40.9214L93.9973 40.3549L91.8088 42.5434ZM94.331 12.8233L89.9853 17.1691L89.2853 17.5555L86.7259 20.4284L90.142 17.3258L92.3149 15.1529L94.331 12.8233ZM44.7972 62.3259L76.9824 30.1406L59.2542 49.1955L44.7972 62.3259ZM77.1482 40.321L70.1709 47.5323L70 47.6463L70.0895 47.6164L68.1916 49.5779L70.185 47.5846L70.2105 47.5761L70.421 47.3656L70.37 47.3996L73.6557 44.1139L72.6416 45.5283L84.0768 33.893L87.6194 30.1502L76.6913 41.0783L77.1482 40.321ZM50.5355 34.3137L72.6617 12.1875L60.4955 25.3084L50.5355 34.3137ZM70.2104 44.0681L70.6314 43.7875L70.4209 43.998L70.2104 44.0681ZM71.263 40.0687L70.842 40.3494L71.0525 40.2792L71.263 40.0687ZM55.1084 12.4355L55.3189 12.225L54.8979 12.5056L55.1084 12.4355ZM48.8718 15.5785L60.2075 4.70496L49.4056 15.4006L48.8718 15.5785ZM23.7636 57.4491L29.9099 51.5854L26.1656 55.6123L27.2361 54.8244L23.435 58.6255L22.0681 59.9924L20.0562 62.0042L18.5082 63.8349L16.9601 65.6656L15.8328 66.2277L13.9315 67.7051L10.4821 71.0132L14.2832 67.2121L16.6775 65.383L21.1113 60.5253L20.477 60.7357L23.2937 58.4842L25.8277 55.9502L23.7636 57.4491ZM48.3825 74.1824L44.8832 77.8523L46.9145 75.8211L45.4748 77.4881L43.4493 79.2862L42.4082 80.1568L43.9215 79.0414L42.2487 80.7143L39.3752 83.8151L41.8844 81.3059L43.8473 79.6842L42.334 80.7995L44.7237 78.4098L46.1576 76.976L46.9713 75.8779L50.078 72.7713L48.1093 74.6262L48.3825 74.1824ZM29.2877 62.9906L29.0772 63.2011L28.8667 63.2713L29.2877 62.9906ZM29.7088 59.4823L29.9193 59.2719L29.4983 59.5525L29.7088 59.4823ZM29.0772 66.5687L28.8667 66.7792L28.6562 66.8494L29.0772 66.5687ZM22.9729 68.748L23.1834 68.5375L22.7624 68.8181L22.9729 68.748ZM3.8147e-05 91.7593L13.2499 79.1355L6.5001 86.2595L3.8147e-05 91.7593ZM16.0685 87.9974L17.1375 87.0687L16.5382 87.668L16.0685 87.9974ZM21.7869 79.3344L20.7179 80.263L21.1876 79.9337L21.7869 79.3344ZM12.3607 95.0755L13.4298 94.1469L12.8304 94.7462L12.3607 95.0755ZM42.7176 59.3801L43.2789 58.8187L43.0684 59.1696L42.7877 59.4502L42.2966 59.801L42.5772 59.3801H42.7176ZM26.3124 49.3152L24.3599 51.2676L23.996 51.3918L22.8956 52.732L24.4798 51.3875L25.456 50.4113L26.3124 49.3152ZM39.0689 63.3097L38.5777 63.6606L39.56 62.6782L39.0689 63.3097ZM20.3574 55.8032L19.3751 56.7856L19.8662 56.4347L20.3574 55.8032ZM39.9297 64.195L41.5504 62.3779L41.534 62.5907L43.5967 60.528L42.9746 61.2811L40.8628 63.5238L40.961 63.1637L39.9297 64.195ZM22.3921 55.457L21.3998 56.5696L22.0313 55.9381L21.9711 56.1587L23.2642 54.7854L23.6451 54.3243L22.3821 55.5873L22.3921 55.457ZM40.6473 92.4498L45.0485 88.0485L43.0066 90.4079L40.806 92.6085L37.3463 95.7507L39.9384 92.8412L40.6473 92.4498ZM18.5042 48.7973L11.5457 55.7558L10.4249 56.3746L6.32684 60.9746L11.7967 56.0067L15.2759 52.5275L18.5042 48.7973ZM32.7113 78.139L31.1131 79.7372L30.8432 79.8668L29.9145 80.9358L31.1833 79.8074L31.9823 79.0083L32.7113 78.139ZM21.7577 93.9525L31.2855 84.0344L30.8324 84.8777L42.4999 73.2102L38.7408 77.2295L26.5552 89.6753L27.5914 88.1187L21.7577 93.9525ZM98.5132 90.0591L89.9224 97.9224L93.5769 94.9953L98.5132 90.0591ZM97.8456 80.2105L99.5027 78.6937L98.5506 79.6459L97.8456 80.2105ZM88.5656 56.4599L78.9205 65.7009L82.1262 63.3036L78.1413 67.2885L73.7522 70.8692L74.7195 70.5082L67.717 78.117L63.992 81.0336L58.0146 87.011L63.4289 81.7988L66.3887 79.4454L68.1212 78.5213L70.5757 75.6625L73.0302 72.8038L76.194 69.64L78.3434 67.4906L84.3208 61.5132L82.6575 62.7723L88.5656 56.4599ZM85.1893 67.0375L83.7304 68.356L84.3561 67.8707L85.1893 67.0375ZM90.7969 58.2022L99.2725 50.5418L94.4317 55.3826L90.7969 58.2022ZM79.377 76.2172L77.9182 77.5357L78.5438 77.0504L79.377 76.2172ZM59.4922 91.7253L56.4011 94.1231L60.0049 90.8659L63.6087 87.6087L59.4922 91.7253ZM63.8833 75.4153L46 92.3896L49.6884 89.1193L53.3767 85.8491L63.8833 75.4153ZM71.6063 55.0765L69.6609 57.0219L69.3475 57.1949L68.2018 58.481L69.731 57.0921L70.7037 56.1194L71.6063 55.0765ZM55.1405 71.6857L61.4131 65.4131L57.958 69.1267L55.1405 71.6857ZM65.8396 69.4497L61.7138 73.7138L64.2308 71.1968L63.7637 71.8484L69.0313 66.4886L70.6632 64.7645L65.6292 69.7985L65.8396 69.4497ZM53.0034 65.4955L58.2258 59.8914L58.0558 60.4431L64.5517 53.9472L62.5136 56.2398L55.7841 63.2238L56.2513 62.2475L53.0034 65.4955ZM97.0997 71.2032L79.6514 88.6515L86.7697 80.814L97.0997 71.2032ZM35.1848 56.2513L31.93 59.9006L34.0012 57.8294L33.804 58.5527L38.0451 54.0485L39.2945 52.5361L35.1519 56.6787L35.1848 56.2513ZM66.8712 26.2471L78.1907 14.3099L77.7244 15.394L91.6784 1.4399L87.233 6.29715L72.7096 21.2323L73.8482 19.2701L66.8712 26.2471ZM28.0473 68.2068L20.4355 76.375L25.1695 71.641L24.4884 73.0639L34.297 62.8844L37.2675 59.5429L27.7995 69.0109L28.0473 68.2068ZM8.94067 39.5658L14.1631 33.9617L13.993 34.5134L20.4889 28.0175L18.4509 30.3101L11.7213 37.2941L12.1886 36.3178L8.94067 39.5658ZM99.7403 26L88 37.7404L93.2735 32.9508L99.7403 26ZM1.93388 8.08743L4.77765 5.04974L4.67856 5.34275L8.20743 1.81388L7.09578 3.05481L3.4355 6.84437L3.69832 6.32299L1.93388 8.08743ZM54.4485 44.211L48.5985 50.061L47.6563 50.5813L44.211 54.4485L48.8095 50.272L51.7345 47.347L54.4485 44.211Z" />
+</pattern>
+</defs><g class="5YaZ55yf44KS6KaL44KL"><g class="shape" ><path d="M-1.600310 -0.578379 L156.045551 1.811030 L155.253697 66.234072 L0.925556 69.532483" transform="translate(55 0)" stroke="#b45309" fill="#fef3c7" class="shape" style="stroke-width:2;" /><path d="M0.857263 0.963884 C30.680942 0.534936, 61.441269 -2.358399, 154.206405 0.392335 M-0.648665 0.264598 C34.748995 -0.524619, 68.705478 -1.094292, 154.419625 0.752815 M156.536704 -1.749433 C155.470963 16.020414, 156.162499 27.939522, 156.390547 67.130645 M155.297677 -0.799274 C155.670151 17.390793, 154.693683 36.529135, 155.406876 68.352243 M156.052801 67.786559 C122.601194 70.873674, 86.457938 70.330149, 1.836456 67.596476 M154.056573 67.856267 C96.645676 68.618642, 39.263022 68.347177, 0.938949 68.041844 M-0.720604 67.718532 C0.273767 46.968585, -1.458665 29.173928, 0.591800 -1.206080 M0.217956 68.998223 C-1.612459 42.609955, -1.106404 17.627297, 0.440740 0.988030" transform="translate(55 0)" stroke="#b45309" fill="#fef3c7" class="shape" style="stroke-width:2;" /><rect width="155" height="68" transform="translate(55 0)" class=" sketch-overlay-bright" /></g><text x="132.5" y="40.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:18px">写真を見る</text></g><g class="55uu44GM6YGT562L44KS44Gq44Ge44KL"><g class="shape" ><path d="M-1.600310 -0.578379 L222.045551 1.811030 L221.253697 66.234072 L0.925556 69.532483" transform="translate(22 168)" stroke="#0D32B2" class="shape fill-B6" style="stroke-width:2;" /><path d="M0.741508 0.833732 C43.924415 0.231319, 87.917496 -2.271333, 220.313563 0.339358 M-0.561077 0.228870 C49.298881 -0.946697, 97.912263 -1.439447, 220.497992 0.651164 M222.536704 -1.749433 C221.470963 16.020414, 222.162499 27.939522, 222.390547 67.130645 M221.297677 -0.799274 C221.670151 17.390793, 220.693683 36.529135, 221.406876 68.352243 M221.910643 67.815380 C174.227673 71.615144, 124.216505 71.145011, 1.588482 67.650963 M220.183963 67.875675 C137.847311 68.665792, 55.535088 68.430983, 0.812164 68.036194 M-0.720604 67.718532 C0.273767 46.968585, -1.458665 29.173928, 0.591800 -1.206080 M0.217956 68.998223 C-1.612459 42.609955, -1.106404 17.627297, 0.440740 0.988030" transform="translate(22 168)" stroke="#0D32B2" class="shape fill-B6" style="stroke-width:2;" /><rect width="221" height="68" transform="translate(22 168)" class=" sketch-overlay-B6" /></g><text x="132.5" y="208.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:18px">目が道筋をなぞる</text></g><g class="JiMzNDvlhpnnnJ_jgYzmtojjgYjjgabjgoJcbuebruOBjOWQjOOBmOmBk-OCkuOBquOBnuOCiyYjMzQ7"><g class="shape" ><path d="M-1.600310 -0.578379 L243.045551 1.811030 L242.253697 84.234072 L0.925556 87.532483" transform="translate(11 336)" stroke="#c0392b" class="shape fill-B6" style="stroke-width:2;" /><path d="M0.711501 0.799993 C48.135702 0.151314, 96.337290 -2.250062, 241.341341 0.325626 M-0.538371 0.219608 C53.931889 -1.058877, 107.206018 -1.531687, 241.518307 0.624813 M243.536704 -1.749433 C242.304743 19.935456, 242.996279 35.769605, 243.390547 85.130645 M242.297677 -0.799274 C242.783477 22.221917, 241.807008 46.191382, 242.406876 86.352243 M242.873792 85.822851 C190.662483 89.813692, 136.217192 89.362584, 1.524200 85.665088 M241.216985 85.880706 C150.956222 86.678748, 60.718900 86.453442, 0.779298 86.034729 M-0.720604 85.718532 C0.012503 59.806017, -1.719930 36.848793, 0.591800 -1.206080 M0.217956 86.998223 C-1.833938 54.062162, -1.327884 22.531711, 0.440740 0.988030" transform="translate(11 336)" stroke="#c0392b" class="shape fill-B6" style="stroke-width:2;" /><rect width="242" height="86" transform="translate(11 336)" class=" sketch-overlay-B6" /></g><text x="132" y="376.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:18px"><tspan x="132" dy="0">写真が消えても</tspan><tspan x="132" dy="20.5">目が同じ道をなぞる</tspan></text></g><g class="6aCt44Gu5Lit44Gu57W144GM5L-d44Gf44KM44KL"><g class="shape" ><path d="M-1.600310 -0.578379 L265.045551 1.811030 L264.253697 66.234072 L0.925556 69.532483" transform="translate(0 522)" stroke="#b45309" fill="#fef3c7" class="shape" style="stroke-width:2;" /><path d="M0.680066 0.764648 C52.547526 0.073892, 105.158028 -2.221388, 263.370442 0.311239 M-0.514585 0.209905 C58.785516 -1.162785, 116.942333 -1.614706, 263.539589 0.597207 M265.536704 -1.749433 C264.470963 16.020414, 265.162499 27.939522, 265.390547 67.130645 M264.297677 -0.799274 C264.670151 17.390793, 263.693683 36.529135, 264.406876 68.352243 M264.835186 67.830678 C207.879903 71.990498, 148.789339 71.559321, 1.456858 67.679885 M263.251580 67.885977 C164.689368 68.688712, 66.149560 68.473360, 0.744867 68.033195 M-0.720604 67.718532 C0.273767 46.968585, -1.458665 29.173928, 0.591800 -1.206080 M0.217956 68.998223 C-1.612459 42.609955, -1.106404 17.627297, 0.440740 0.988030" transform="translate(0 522)" stroke="#b45309" fill="#fef3c7" class="shape" style="stroke-width:2;" /><rect width="264" height="68" transform="translate(0 522)" class=" sketch-overlay-bright" /></g><text x="132" y="562.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:18px">頭の中の絵が保たれる</text></g><g class="KOWGmeecn-OCkuimi-OCiyAtJmd0OyDnm67jgYzpgZPnrYvjgpLjgarjgZ7jgospWzBd"><marker id="mk-d2-273726095-3488378134" markerWidth="10" markerHeight="12" refX="7" refY="6" viewBox="0 0 10 12" orient="auto" markerUnits="userSpaceOnUse"> <polygon points="0,0 10,6 0,12" fill="#0D32B2" class="connection fill-B1" stroke-width="2" /> </marker><path d="M132 70 C132.202656 108.428631, 132.481942 127.840123, 131.000044 163.170064 M132.581585 69.719938 C132.225592 107.095546, 131.737471 128.496473, 131.005155 163.543683" fill="none" class="connection stroke-B1" style="stroke-width:2;" mask="url(#d2-273726095)" /><path d="M-8.527627 -3.097061 L1.749550 0.558791 L-8.562935 4.521533" stroke="none" class="connection fill-B1" style="stroke-width:0;" transform="translate(132.000000 164.000000) rotate(90.00000250447816)" /> <path d="M-10.153731 -4.038897 C-7.293657 -2.964754, -5.552453 -3.126871, 0.222305 -0.654474 M-10.160117 -4.253535 C-7.616436 -2.677663, -5.569656 -2.320404, -0.086565 0.272291 M0.578048 -0.807164 C-2.240460 1.133634, -3.845699 1.135504, -9.579367 4.140709 M-0.217907 -0.322328 C-3.660571 0.941126, -7.003142 2.167050, -10.100296 3.840861 M-9.957758 4.629247 C-9.937438 2.794817, -10.508655 0.509238, -9.330834 -3.522818 M-10.354741 4.285014 C-9.712366 0.996453, -9.805329 -1.235319, -9.648840 -4.366524" fill="none" class="connection stroke-B1" style="stroke-width:2;" transform="translate(132.000000 164.000000) rotate(90.00000250447816)" /></g><g class="KOebruOBjOmBk-eti-OCkuOBquOBnuOCiyAtJmd0OyAmIzM0O-WGmeecn-OBjOa2iOOBiOOBpuOCglxu55uu44GM5ZCM44GY6YGT44KS44Gq44Ge44KLJiMzNDspWzBd"><path d="M132 238 C132.202656 276.428631, 132.481942 295.840123, 131.000044 331.170064 M132.581585 237.719938 C132.225592 275.095546, 131.737471 296.496473, 131.005155 331.543683" fill="none" class="connection stroke-B1" style="stroke-width:2;" mask="url(#d2-273726095)" /><path d="M-8.527627 -3.097061 L1.749550 0.558791 L-8.562935 4.521533" stroke="none" class="connection fill-B1" style="stroke-width:0;" transform="translate(132.000000 332.000000) rotate(90.00000250447816)" /> <path d="M-10.153731 -4.038897 C-7.293657 -2.964754, -5.552453 -3.126871, 0.222305 -0.654474 M-10.160117 -4.253535 C-7.616436 -2.677663, -5.569656 -2.320404, -0.086565 0.272291 M0.578048 -0.807164 C-2.240460 1.133634, -3.845699 1.135504, -9.579367 4.140709 M-0.217907 -0.322328 C-3.660571 0.941126, -7.003142 2.167050, -10.100296 3.840861 M-9.957758 4.629247 C-9.937438 2.794817, -10.508655 0.509238, -9.330834 -3.522818 M-10.354741 4.285014 C-9.712366 0.996453, -9.805329 -1.235319, -9.648840 -4.366524" fill="none" class="connection stroke-B1" style="stroke-width:2;" transform="translate(132.000000 332.000000) rotate(90.00000250447816)" /></g><g class="KCYjMzQ75YaZ55yf44GM5raI44GI44Gm44KCXG7nm67jgYzlkIzjgZjpgZPjgpLjgarjgZ7jgosmIzM0OyAtJmd0OyDpoK3jga7kuK3jga7ntbXjgYzkv53jgZ_jgozjgospWzBd"><path d="M132 424 C132.202656 462.428631, 132.481942 481.840123, 131.000044 517.170064 M132.581585 423.719938 C132.225592 461.095546, 131.737471 482.496473, 131.005155 517.543683" fill="none" class="connection stroke-B1" style="stroke-width:2;" mask="url(#d2-273726095)" /><path d="M-8.527627 -3.097061 L1.749550 0.558791 L-8.562935 4.521533" stroke="none" class="connection fill-B1" style="stroke-width:0;" transform="translate(132.000000 518.000000) rotate(90.00000250447816)" /> <path d="M-10.153731 -4.038897 C-7.293657 -2.964754, -5.552453 -3.126871, 0.222305 -0.654474 M-10.160117 -4.253535 C-7.616436 -2.677663, -5.569656 -2.320404, -0.086565 0.272291 M0.578048 -0.807164 C-2.240460 1.133634, -3.845699 1.135504, -9.579367 4.140709 M-0.217907 -0.322328 C-3.660571 0.941126, -7.003142 2.167050, -10.100296 3.840861 M-9.957758 4.629247 C-9.937438 2.794817, -10.508655 0.509238, -9.330834 -3.522818 M-10.354741 4.285014 C-9.712366 0.996453, -9.805329 -1.235319, -9.648840 -4.366524" fill="none" class="connection stroke-B1" style="stroke-width:2;" transform="translate(132.000000 518.000000) rotate(90.00000250447816)" /></g><mask id="d2-273726095" maskUnits="userSpaceOnUse" x="-101" y="-101" width="466" height="792">
+<rect x="-101" y="-101" width="466" height="792" fill="white"></rect>
+
+</mask></svg></svg>
+    <figcaption>実験メモ：覚えるときの目の道筋が、保っているあいだにもう一度なぞられる<span class="stamp">観察</span></figcaption>
+  </figure>
+  <h3>どう読むか——頭の中で保つ力は、目も使っている</h3>
+  <p>頭の中で保つ力（ワーキングメモリ）は、頭の中だけの話ではない。目という体の動きも、保つための一部として働いている。覚えたものを思い出そうとするとき、覚えたときと同じ場所に目をやると、頭の中の絵が保ちやすい、というのがこの研究からの読みだ。ただしこれは「目の動きから、保っている絵が読み取れる」ことを示した研究で、「目を動かせば覚えが良くなる」ことを直接確かめたものではない。そこは言い過ぎないこと。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（5分）</h3>
+    <p>図や画面の配置を覚えるとき、覚えたあと目を閉じて、見た場所を同じ順番で目でなぞってみる。どこを見ていたか分からなくなったら、もう一度見直す。覚えるときの目の道筋が、思い出すときの手がかりになる。</p>
+  </div>
+  <p class="meta">出典：Journal of Neuroscience「Gaze reinstatement during working memory for natural scenes」（2026年11月6日）／どれくらい確かか：高（査読のある学術誌の一次情報）。実験は2回。目の動きが覚えを助けるかどうかは、まだ直接の検証ではない<br>
+  <a href="http://www.jneurosci.org/content/early/2026/11/03/JNEUROSCI.2151-25.2026">jneurosci.org — Gaze reinstatement during working memory for natural scenes</a></p>
+</article>
+
+<article id="f3">
+  <span class="tag">特集 3 ・ AI</span>
+  <h2>AIの作業に「通らないと先へ進めない関門」を付ける——25の手順集が11万スター</h2>
+  <h3>誰が・何をした</h3>
+  <p>Googleのエンジニア、Addy Osmaniが作った「agent-skills」という手順集が、11月13日時点で11万6,944スターを集めた。AIにコードを書かせるときの進め方を25個の手順（スキル）と9個の命令にまとめたもので、仕様を書く→計画を立てる→作る→テストする→見直す→公開する、という実際の開発の流れに沿っている。Vercelの道具を使えば、70種類以上のAIの道具に入れられる。</p>
+  <p>具体的には、こういう縛り方だ。ただ「こう進めるといいよ」と提案するのではなく、「通らないと先へ進めない関門」として強制する。たとえば「テストが通ることが、できたことの証拠」「一度に進める仕事は1つだけ」「公開する前に5つの見方で見直す」。AIが書く速さに人の点検が追いつかない、という今のチームの困りごとに、進め方の側から答えた形だ。手順そのものは文章（Markdown）で書かれていて、MITライセンスの公開物だ。</p>
+  <h3>どう読むか——速さの問題は、速さでは解けない</h3>
+  <p>11月7日号の「1つの長い会話で全部やらせない」、11月9日号の「作ったものを別の目で見直す」と、同じ方向の話だ。AIが速く書けるようになった分、人の点検が追いつかず、止まる場所が「作る速さ」から「確かめる速さ」に移った。この手順集は、その確かめる側を仕組み化したものだ。関門を通らないと進めない、という縛りは面倒に見えるが、後から直す手間と比べれば安い。自分のチームの進め方に、関門を1つだけ足すところから試すのがいい。</p>
+  <div class="try">
+    <h3 style="margin-top:0">試す一手（10分）</h3>
+    <p>次にAIへコードを頼むとき、頼み文の最後に1行だけ足す。「テストが通るまで、できたことにしないで」。これが1つ目の関門になる。通ったかどうかを、AIの言葉ではなくテストの結果で確かめる。</p>
+  </div>
+  <p class="meta">出典：Open Source Radar「Open Source Radar — November 13: Free Claude Code's 1.3B Tokens」（11月13日）／どれくらい確かか：中〜高。スター数と中身は公開リポジトリで確かめられる。ただし「点検が追いつかないチームに効く」は書き手の見立てで、効果の測定はない<br>
+  <a href="https://siliconnoon.com/open-source-radar-november-13-free-claude-codes-13b-tokens/">siliconnoon.com — Open Source Radar — November 13: Free Claude Code's 1.3B Tokens</a></p>
+</article>
+
+<section class="notes" id="notes">
+  <h2>小ネタ速報</h2>
+  <ul>
+    <li><b>無料のトークンでClaude Codeを回す裏口「free-claude-code」が出た。月13億トークン分を無料枠から、と作者は言う。</b>自分のパソコンに置く中継役で、12の道具・61の提供元に対応する。無料枠は規約で消えることがあり、作者自身が「消えたつなぎは外す」と明言している。1万フォークを超えた（11月13日、Open Source Radarより）。<br><a href="https://siliconnoon.com/open-source-radar-november-13-free-claude-codes-13b-tokens/">siliconnoon.com — Open Source Radar — November 13: Free Claude Code's 1.3B Tokens</a></li>
+    <li><b>Qwen Codeが1.0の試作版に。商用のQoderの仕組みを取り込んだ。</b>自動で覚える・下働きの役を分ける・チームで動く・MCP対応。自分のパソコンのモデル（OllamaやvLLM）でも動き、OpenAI・Anthropic・Gemini・Qwenの呼び方を切り替えられる。Qwenいわく、自分で課題を立てて直すところまで回している（11月13日、Open Source Radarより）。<br><a href="https://siliconnoon.com/open-source-radar-november-13-free-claude-codes-13b-tokens/">siliconnoon.com — Open Source Radar — November 13: Free Claude Code's 1.3B Tokens</a></li>
+    <li><b>Botに1台ずつパソコンを持たせる「OpenBot」が出た。</b>ブラウザ・ファイル・道具つきの仕事場をBotごとに用意し、やることは始める前に決め、終わったあと記録に残す。会社のログインや承認・記録もまとめて管理する（11月13日、Open Source Radarより）。<br><a href="https://siliconnoon.com/open-source-radar-november-13-free-claude-codes-13b-tokens/">siliconnoon.com — Open Source Radar — November 13: Free Claude Code's 1.3B Tokens</a></li>
+    <li><b>Codexが0.169.0に、Claude Codeが2.1.323に上がった。</b>Claude Codeの2.1.323は、秘密に見える言葉を含む許可ルールや、gitで追う設定ファイルに保存されそうな許可ルールが、その場限りになるよう直した。11月初めに指摘された「秘密が設定に残る」問題への対応だ（11月12〜13日、AgentVera／各リポジトリより）。<br><a href="https://agentvera.dev/en/agent-changelog/">agentvera.dev — Claude Code, Codex, Gemini CLI changelog: every release</a></li>
+    <li><b>11月18日にAntigravityから3つのモデルが外れ、11月21日でCodexの割引価格の約束が切れる。</b>外れるのはClaude Sonnet 4.6（考える版）・Opus 4.6（考える版）・GPT-OSS-120b。CodexのGPT-5.6 Solの割引価格は「11月21日まで少なくとも続く」とだけ書かれていて、その後の値段は出ていない（11月13日、Mediumのまとめより）。<br><a href="https://medium.com/@sarathc225/claude-codes-terminal-bench-lead-costs-7-4x-what-codex-pays-the-error-bars-overlap-nov-2026-0e0d31dbfda2">medium.com — Claude Code's Terminal-Bench Lead Costs 7.4x What Codex Pays. The Error Bars Overlap. (Nov 2026)</a></li>
+  </ul>
+</section>
+
+<section class="notes stock">
+  <h2>試したいストック（今日分）</h2>
+  <ul>
+    <li>自分の仕事を10件だけ、Claude CodeとCodexの両方に同じ頼み方でやらせ、「解けた数」と「かかったお金」を並べる（特集1）</li>
+    <li>図や画面の配置を覚えるとき、覚えたあと目を閉じて、見た場所を同じ順番で目でなぞってみる（特集2）</li>
+    <li>次にAIへコードを頼むとき、頼み文の最後に「テストが通るまで、できたことにしないで」と1行足す（特集3）</li>
+  </ul>
+</section>
+
+<footer>
+  今日は土曜の通常号。AIは毎日、心理学とマーケティングは隔日で第2特集。明日は日曜で、3領域をつなぐ週次統合。来週も、具体物のある情報だけを選ぶ。
+</footer>
+
+</div>
+
+<p class="backlink"><a href="../index.html">← タイムライン（ホーム）に戻る</a></p>
+<!-- auto-reload -->
+<script>
+(function(){var t=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){if(Date.now()-t>5*60*1000){location.reload();}t=Date.now();}});window.addEventListener('pageshow',function(e){if(e.persisted){location.reload();}});})();
+</script>
+<!-- menu-script -->
+<script>
+(function(){var b=document.querySelector('.menubtn'),d=document.querySelector('.dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});document.addEventListener('click',function(){d.classList.remove('open');});var r=document.getElementById('menu-reload');if(r){r.addEventListener('click',function(){var u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());});}})();
+</script>
+</body>
+</html>
